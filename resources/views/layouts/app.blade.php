@@ -10,8 +10,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Poppins&display=swap"
         rel="stylesheet">
-    {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
-    <link rel="stylesheet" href="{{ asset('build/assets/app-fb83ca10.css') }}">
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    {{-- <link rel="stylesheet" href="{{ asset('build/assets/app-fb83ca10.css') }}"> --}}
 </head>
 
 <body class="font-inter">
@@ -121,11 +121,11 @@
 
     <section
         class="lg:pt-[29vh] pt-[23vh] h-[100vh] bg-[url('https://images.unsplash.com/photo-1511884642898-4c92249e20b6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')] bg-blend-multiply bg-gray-700">
-        <div class="grid max-w-screen-lg px-4 pb-8 mx-auto lg:gap-8 xl:gap-0 lg:grid-cols-12">
+        <div class="max-w-screen-lg px-4 pb-8 mx-auto">
             <div class="text-center col-span-12">
-                <h1 class="mb-4 text-3xl font-extrabold leading-none md:text-4xl lg:text-5xl text-white">
+                <h1 class="mb-4 text-3xl font-extrabold lg:leading-none leading-normal md:text-4xl lg:text-5xl text-white">
                     Selamat Datang di Balai Pemantapan Kawasan Hutan dan Tata Lingkungan</h1>
-                <p class="max-w-2xl mx-auto mb-6 font-light text-gray-300 lg:mb-8 md:text-lg lg:text-xl">Jl. Rusli
+                <p class="lg:max-w-2xl max-w-md mx-auto mb-16 font-light text-gray-300 lg:mb-8 md:text-lg lg:text-xl">Jl. Rusli
                     Datau No.10, Dulomo Sel., Kec. Kota Utara, Kota Gorontalo, Gorontalo 96128</p>
 
                 <a href="#sambutan"
@@ -226,7 +226,7 @@
         </div>
     </section>
 
-    <section id="sambutan" class="bg-gray-200 w-full px-4 py-8 text-center lg:py-32 lg:px-6 overflow-hidden">
+    <section id="sambutan" class="bg-gray-50 w-full px-4 py-8 text-center lg:py-32 lg:px-6 overflow-hidden">
         <figure class="max-w-screen-md mx-auto px-5 duration-1000" id="blockquote">
             <svg class="h-12 mx-auto mb-3 text-gray-400 dark:text-gray-600" viewBox="0 0 24 27" fill="none"
                 xmlns="http://www.w3.org/2000/svg">
