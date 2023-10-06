@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Poppins&display=swap"
         rel="stylesheet">
     {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
-    <link rel="stylesheet" href="{{ asset('build/assets/app-1b1a72f3.css') }}">
+    <link rel="stylesheet" href="{{ asset('build/assets/app-fb83ca10.css') }}">
 </head>
 
 <body class="font-inter">
@@ -47,7 +47,7 @@
                         </li>
                         <li>
                             <button id="mega-menu-full-dropdown-button" data-collapse-toggle="mega-menu-full-dropdown"
-                                class="flex items-center justify-between w-full py-2 pl-3 pr-4  text-white rounded md:w-auto hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-600 md:p-0 md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700">Company
+                                class="flex items-center justify-between w-full py-2 pl-3 pr-4  text-white rounded md:w-auto hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-600 md:p-0 md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700">Tentang
                                 <svg class="w-2.5 h-2.5 ml-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                     fill="none" viewBox="0 0 10 6">
                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
@@ -55,10 +55,10 @@
                                 </svg></button>
                         </li>
                         <li>
-                            <a href="#" class="block py-2 pl-3 pr-4 text-white md:p-0">Wisata Desa</a>
+                            <a href="#" class="block py-2 pl-3 pr-4 text-white md:p-0">Struktur</a>
                         </li>
                         <li>
-                            <a href="#" class="block py-2 pl-3 pr-4 text-white md:p-0">Kuliner</a>
+                            <a href="#" class="block py-2 pl-3 pr-4 text-white md:p-0">Sejarah</a>
                         </li>
 
                     </ul>
@@ -226,8 +226,8 @@
         </div>
     </section>
 
-    <section id="sambutan" class="bg-gray-50 w-full px-4 py-8 mx-auto text-center lg:py-32 lg:px-6">
-        <figure class="max-w-screen-md mx-auto duration-1000 scale-110" id="blockquote">
+    <section id="sambutan" class="bg-gray-200 w-full px-4 py-8 text-center lg:py-32 lg:px-6 overflow-hidden">
+        <figure class="max-w-screen-md mx-auto px-5 duration-1000" id="blockquote">
             <svg class="h-12 mx-auto mb-3 text-gray-400 dark:text-gray-600" viewBox="0 0 24 27" fill="none"
                 xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -235,7 +235,7 @@
                     fill="currentColor" />
             </svg>
             <blockquote>
-                <p class="text-xl font-medium text-gray-900 md:text-2xl">"Selamat datang di website resmi Balai
+                <p class="text-lg font-medium text-gray-900 md:text-2xl">"Selamat datang di website resmi Balai
                     Pemantapan Kawasan Hutan dan Tata Lingkungan! Kami berkomitmen untuk melestarikan kekayaan alam dan
                     lingkungan. Terus dukung upaya kami dalam menjaga keindahan alam kita. Terima kasih!"</p>
             </blockquote>
@@ -251,7 +251,7 @@
         </figure>
     </section>
 
-    <section class="flex justify-center items-center relative">
+    <section class="flex justify-center items-center relative overflow-hidden">
         <div class="overflow-hidden lg:h-screen relative">
             <img class="thumbnail blur-sm w-screen bg-blend-multiply"
                 src="https://lh5.googleusercontent.com/p/AF1QipPyfcXCtGc9HBsJ5IUfSraDgCnQTQlvesyvzhLa=w408-h306-k-no"
@@ -259,7 +259,7 @@
             </div>
             <div class="w-full absolute lg:h-screen h-auto bg-black opacity-60"></div>
 
-        <figure class="max-w-screen-md absolute lg:p-0 p-10 duration-1000 scale-110" id="blockquote">
+        <figure class="max-w-screen-md absolute duration-1000" id="blockquote">
             <svg class="h-12 mx-auto mb-3 text-gray-400 dark:text-gray-600" viewBox="0 0 24 27" fill="none"
                 xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -285,7 +285,7 @@
         </figure>
     </section>
 
-    {{-- <section class="bg-gray-50max-w-screen-xl px-4 py-8 mx-auto lg:py-16 lg:px-6 bg-red-50">
+    <section class="bg-gray-50 max-w-screen-xl px-4 py-8 mx-auto lg:py-16 lg:px-6">
         <div class="max-w-screen-sm mx-auto text-center">
             <h2 class="mb-4 text-3xl font-extrabold leading-tight tracking-tight text-gray-900">
                 Start your free trial today</h2>
@@ -296,7 +296,7 @@
                 trial for 30 days</a>
         </div>
         </div>
-    </section> --}}
+    </section>
 
     <footer class="bg-whitemax-w-screen-xl p-4 py-6 mx-auto lg:py-16 md:p-8 lg:p-10">
         <div class="grid grid-cols-2 gap-8 md:grid-cols-3 lg:grid-cols-5">
