@@ -32,6 +32,6 @@ function backTop() {
 
 var image = document.getElementsByClassName("thumbnail");
 new simpleParallax(image, {
-    scale: 1.5,
+    scale: 2,
     delay: 0.9,
 });

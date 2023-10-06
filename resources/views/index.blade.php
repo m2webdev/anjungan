@@ -133,7 +133,7 @@
     <section class="flex justify-center items-center relative overflow-hidden">
         <div class="overflow-hidden lg:h-screen relative">
             <img class="thumbnail blur-sm w-screen bg-blend-multiply"
-                src="https://lh5.googleusercontent.com/p/AF1QipPyfcXCtGc9HBsJ5IUfSraDgCnQTQlvesyvzhLa=w408-h306-k-no"
+                srcset="{{ asset('images/kantor.jpg') }} 1x, {{ asset('images/kantor.jpg') }} 2x"
                 alt="">
         </div>
         <div class="w-full absolute lg:h-screen h-auto bg-black opacity-70"></div>
@@ -162,7 +162,7 @@
         </figure>
     </section>
 
-    <section class="bg-gray-50 max-w-screen-xl px-4 py-8 mx-auto lg:py-16 lg:px-6">
+    {{-- <section class="bg-gray-50 max-w-screen-xl px-4 py-8 mx-auto lg:py-16 lg:px-6">
         <div class="max-w-screen-sm mx-auto text-center">
             <h2 class="mb-4 text-3xl font-extrabold leading-tight tracking-tight text-gray-900">
                 Start your free trial today</h2>
@@ -173,5 +173,5 @@
                 trial for 30 days</a>
         </div>
         </div>
-    </section>
+    </section> --}}
 @endsection
