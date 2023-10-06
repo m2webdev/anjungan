@@ -5,7 +5,7 @@
         <div class="max-w-screen-lg px-4 pb-8 mx-auto">
             <div class="text-center col-span-12">
                 <h1 class="mb-4 text-3xl font-extrabold lg:leading-none leading-normal md:text-4xl lg:text-5xl text-white">
-                    Fiqri sayang salsa</h1>
+                    Selamat Datang di Balai Pemantapan Kawasan Hutan dan Tata Lingkungan</h1>
                 <p class="lg:max-w-2xl max-w-md mx-auto mb-16 font-light text-gray-300 lg:mb-8 md:text-lg lg:text-xl">Jl.
                     Rusli
                     Datau No.10, Dulomo Sel., Kec. Kota Utara, Kota Gorontalo, Gorontalo 96128</p>
