@@ -130,11 +130,111 @@
         </figure>
     </section>
 
+    <section class="bg-gray-50 w-full px-5 py-8 text-center lg:pb-32 lg:px-6 overflow-hidden">
+        <h1 class="text-4xl font-semibold inline-block mb-2">Berita</h1>
+        <p class="text-lg block mb-16 text-gray-500">Temukan informasi anda disini</p>
+
+        <div
+            class="flex lg:flex-row flex-col border-2 border-gray-200 bg-white shadow-lg max-w-screen-xl lg:space-x-5 space-x-0 lg:space-y-0 space-y-5 mx-auto p-6 rounded-lg text-white">
+            <div class="min-w-[300px] bg-slate-100 rounded-md max-h-[489px]">
+                <div id="default-carousel" class="relative w-full rounded-md min-h-full border"
+                    data-carousel="slide">
+                    <!-- Carousel wrapper -->
+                    <div class="relative overflow-hidden rounded-lg h-[505px]">
+                        @foreach ($posts as $post)
+                            <div class="hidden duration-700 ease-in-out group" data-carousel-item>
+                                <figure
+                                    class="relative max-w-sm transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0 h-full">
+                                    <a href="#">
+                                        <img class="absolute block w-full group-hover:scale-125 duration-700 -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 h-full bg-cover"
+                                            src="{{ asset('storage/' . $post->post_image) }}" alt="image description">
+                                    </a>
+                                    <figcaption
+                                        class="absolute px-4 text-lg uppercase text-white bottom-6 bg-black opacity-80">
+                                        <a href="{{ url($post->slug) }}"
+                                            class="hover:text-blue-300 duration-300">{{ $post->title }}</a>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                        @endforeach
+                    </div>
+
+                    <!-- Slider controls -->
+                    <button type="button"
+                        class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+                        data-carousel-prev>
+                        <span
+                            class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                            <svg class="w-4 h-4 text-white dark:text-gray-800" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="M5 1 1 5l4 4" />
+                            </svg>
+                            <span class="sr-only">Previous</span>
+                        </span>
+                    </button>
+                    <button type="button"
+                        class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+                        data-carousel-next>
+                        <span
+                            class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                            <svg class="w-4 h-4 text-white dark:text-gray-800" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="m1 9 4-4-4-4" />
+                            </svg>
+                            <span class="sr-only">Next</span>
+                        </span>
+                    </button>
+                </div>
+
+            </div>
+            <div class="flex flex-col space-y-5">
+                <div class="flex flex-row text-gray-800">
+                    <h1 class="font-semibold text-3xl">Berita terkini</h1>
+                    <div class="flex-1 flex justify-center flex-col text-center px-3">
+                        <div class="border-b border-gray-400 "></div>
+                    </div>
+                    <div class="flex flex-row-reverse text-gray-500 items-center">
+                        <a href="#" class="hover:text-blue-500 duration-300">
+                            <span class="text-sm">Lihat semua</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke-width="1.5" stroke="currentColor" class="w-5 h-5 ml-1 inline-flex">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="flex flex-col text-left space-y-2">
+                    @foreach ($posts as $post)
+                        <div
+                            class="flex flex-row rounded-md max-h-36 min-h-[9rem] overflow-hidden border border-gray-300">
+                            <div class="hidden lg:flex items-center rounded md:w-60 overflow-hidden">
+                                <img src="{{ asset('storage/' . $post->post_image) }}"
+                                    class="hover:scale-105 duration-300">
+                            </div>
+                            <div class="w-full my-auto pl-3 text-gray-800">
+                                <a href="{{ url($post->slug) }}" class="font-semibold">{{ $post->title }}</a>
+                                <p class="py-2 md:block hidden">{!! $post->excerpt !!}
+                                <p class="py-2 md:hidden block">{!! Str::limit($post->excerpt, 100, '...') !!}
+                                </p>
+                                <span class="text-xs">Kategori : {{ $post->category->name }}, {{ $post->created_at->diffForHumans() }}</span>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+
+
+        </div>
+
+    </section>
+    
     <section class="flex justify-center items-center relative overflow-hidden">
         <div class="overflow-hidden lg:h-screen relative">
             <img class="thumbnail blur-sm w-screen bg-blend-multiply"
-                srcset="{{ asset('images/kantor.jpg') }} 1x, {{ asset('images/kantor.jpg') }} 2x"
-                alt="">
+                srcset="{{ asset('images/kantor.jpg') }} 1x, {{ asset('images/kantor.jpg') }} 2x" alt="">
         </div>
         <div class="w-full absolute lg:h-screen h-auto bg-black opacity-70"></div>
 

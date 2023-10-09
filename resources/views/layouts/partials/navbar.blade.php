@@ -1,7 +1,7 @@
 <header class="w-full lg:bg-transparent bg-slate-900 absolute top-0 left-0">
     <nav class="z-20 top-0 left-0">
-        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-            <a href="https://flowbite.com/" class="flex items-center">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-2">
+            <a href="{{ url('/') }}" class="flex items-center">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Logo_of_the_Ministry_of_Environmental_Affairs_and_Forestry_of_the_Republic_of_Indonesia.svg/900px-Logo_of_the_Ministry_of_Environmental_Affairs_and_Forestry_of_the_Republic_of_Indonesia.svg.png"
                     class="h-12 mr-2" alt="Flowbite Logo">
                 <div class="flex flex-col">
@@ -25,7 +25,7 @@
                 <ul
                     class="flex flex-col p-4 md:p-0 mt-4 lg:-ml-44 font-medium rounded-lg md:flex-row md:space-x-8 md:mt-0 md:border-0">
                     <li>
-                        <a href="#" class="block py-2 pl-3 pr-4 text-white md:p-0">Home</a>
+                        <a href="{{ url('/') }}" class="block py-2 pl-3 pr-4 text-white md:p-0">Home</a>
                     </li>
                     <li>
                         <button id="mega-menu-full-dropdown-button" data-collapse-toggle="mega-menu-full-dropdown"

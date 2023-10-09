@@ -10,6 +10,11 @@ export default {
         extend: {
             fontFamily: {
                 'inter': ['Inter', 'sans']
+            },
+            colors: {
+                custom: {
+                    100: '#069550',
+                }
             }
         },
     },
