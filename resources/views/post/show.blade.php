@@ -6,18 +6,18 @@
         </div>
     </section>
 
-    <section class="w-full">
-        <div class="grid grid-cols-6 max-w-screen-lg mx-auto space-x-3">
-            <div class="col-span-4 p-5 shadow-md rounded-md max-w-screen-lg mx-auto">
+    <section class="w-full bg-gray-100">
+        <div class="grid grid-cols-10 max-w-screen-xl mx-auto space-x-3 px-10">
+            <div class="col-span-7 p-5 shadow-md rounded-md mx-auto bg-white mt-5 mb-10">
 
-                <h1 class="text-sm text-slate-800 leading-8 w-full ">{{ $post->body }}</h1>
-                <img class="h-52 w-auto bg-cover bg-center overflow-hidden" src="{{ asset('storage/' . $post->post_image) }}"
-                    alt="">
+                <img class="w-full h-auto rounded-lg bg-cover bg-center overflow-hidden mb-5"
+                    src="{{ asset('storage/' . $post->post_image) }}" alt="">
+                <div class="text-base font-poppins text-slate-800 leading-7 w-full space-y-3">{!! $post->body !!}</div>
             </div>
-            <div class="col-span-2">
+            <div class="col-span-3">
 
                 <div
-                    class="w-full max-w-md p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
+                    class="w-full max-w-md p-4 bg-white border border-gray-200 rounded-md my-5 shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
                     <div class="flex items-center justify-between mb-4">
                         <h5 class="text-xl font-bold leading-none text-gray-900 dark:text-white">Latest Customers</h5>
                         <a href="#" class="text-sm font-medium text-blue-600 hover:underline dark:text-blue-500">

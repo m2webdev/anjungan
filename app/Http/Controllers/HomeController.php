@@ -12,7 +12,7 @@ class HomeController extends Controller
         return view('index', [
             'posts' => Post::orderBy('created_at', 'desc')
                 ->where('published', true)
-                ->paginate(3)
+                ->take(3)->get()
         ]);
     }
 

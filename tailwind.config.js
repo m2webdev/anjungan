@@ -9,7 +9,8 @@ export default {
     theme: {
         extend: {
             fontFamily: {
-                'inter': ['Inter', 'sans']
+                'inter': ['Inter', 'sans'],
+                'poppins': ['Poppins', 'sans']
             },
             colors: {
                 custom: {

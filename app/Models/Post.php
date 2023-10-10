@@ -28,7 +28,7 @@ class Post extends Model
         static::saving(function ($post) {
             $post->slug = Str::slug($post->title);
             $post->user_id = Auth::id();
-            $post->excerpt = Str::limit($post->body, 100);
+            $post->excerpt = Str::limit($post->body, 120);
         });
     }
 }

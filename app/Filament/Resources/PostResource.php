@@ -19,6 +19,7 @@ use Filament\Tables\Columns\TextColumn;
 use Filament\Forms\Components\TextInput;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\RichEditor;
 use Filament\Tables\Columns\ToggleColumn;
 use Filament\Tables\Filters\SelectFilter;
 use Illuminate\Database\Eloquent\Builder;
@@ -48,12 +49,13 @@ class PostResource extends Resource
                             Select::make('category_id')
                                 ->label('Category')
                                 ->rules(['required'])
+                                ->preload()
                                 ->required()
                                 ->searchable()
                                 ->relationship('category', 'name')
                                 ->native(false),
                         ])->columnSpan(2),
-                        MarkdownEditor::make('body')->rules(['required'])->required()->columnSpan(2),
+                        RichEditor::make('body')->rules(['required'])->required()->columnSpan(2),
                     ])->columnSpan([
                         'default' => 3,
                         'lg' => 2,
