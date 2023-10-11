@@ -163,19 +163,17 @@
         </figure>
     </section>
 
-    {{-- <section class="bg-gray-50 max-w-screen-xl px-4 py-8 mx-auto lg:py-16 lg:px-6">
-        <div class="max-w-screen-sm mx-auto text-center">
-            <h2 class="mb-4 text-3xl font-extrabold leading-tight tracking-tight text-gray-900">
-                Start your free trial today</h2>
-            <p class="mb-6 font-light text-gray-500 dark:text-gray-400 md:text-lg">Try Landwind Platform for 30
-                days. No credit card required.</p>
-            <a href="#"
-                class="text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 focus:outline-none dark:focus:ring-purple-800">Free
-                trial for 30 days</a>
-        </div>
-        </div>
-    </section> --}}
+    <section class="bg-gray-50 w-full px-4 py-8 mx-auto lg:py-16 lg:px-6 mySwiper">
+        <div class="max-w-screen-lg mx-auto pb-4 text-center mb-10">
 
+            <h1 class="text-3xl font-semibold text-gray-700 mb-2">Informasi PPKH - KLHK</h1>
+            <h2 class="text-lg text-gray-400">Pelayanan Informasi Permohonan Persetujuan Penggunaan Kawasan Hutan (PPKH)</h2>
+        </div>
+        <div class="max-w-screen-xl mx-auto flex space-x-3 text-center overflow-x-auto">
+            @include('sections.swiper')
+
+        </div>
+    </section>
 
     <script>
         window.onscroll = function() {

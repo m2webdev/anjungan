@@ -2,18 +2,22 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\CategoryResource\Pages;
-use App\Filament\Resources\CategoryResource\RelationManagers;
-use App\Models\Category;
 use Filament\Forms;
-use Filament\Forms\Components\TextInput;
-use Filament\Forms\Form;
-use Filament\Resources\Resource;
 use Filament\Tables;
-use Filament\Tables\Columns\TextColumn;
+use App\Models\Category;
+use Filament\Forms\Form;
 use Filament\Tables\Table;
+use Filament\Infolists\Infolist;
+use Filament\Resources\Resource;
+use Filament\Tables\Columns\TextColumn;
+use Illuminate\Database\Eloquent\Model;
+use Filament\Forms\Components\TextInput;
 use Illuminate\Database\Eloquent\Builder;
+use App\Filament\Resources\CategoryResource\Pages;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use App\Filament\Resources\CategoryResource\RelationManagers;
+use Filament\Forms\Components\Section;
+use Filament\Infolists\Components\TextEntry;
 
 class CategoryResource extends Resource
 {
@@ -23,43 +27,46 @@ class CategoryResource extends Resource
 
     public static function form(Form $form): Form
     {
-        return $form
-            ->schema([
-                TextInput::make('name')->required(),
-                TextInput::make('slug')->required()
-            ]);
+        return $form->schema([TextInput::make('name')->required(), TextInput::make('slug')->required()]);
     }
 
     public static function table(Table $table): Table
     {
         return $table
             ->columns([
-                TextColumn::make('name'),
+                TextColumn::make('name'), 
                 TextColumn::make('slug'),
+                TextColumn::make('posts_count')
+                    ->state(function (Model $record): int {
+                        return $record->post()->count();
+                 }),
             ])
+
             ->filters([
                 //
             ])
+
             ->actions([
-                Tables\Actions\EditAction::make(),
+                // Tables\Actions\ViewAction::make(),
+                Tables\Actions\EditAction::make()
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
-                    Tables\Actions\DeleteBulkAction::make(),
-                ]),
+                    Tables\Actions\DeleteBulkAction::make()
+                ])
             ])
             ->emptyStateActions([
-                Tables\Actions\CreateAction::make(),
+                Tables\Actions\CreateAction::make()
             ]);
     }
-    
+
     public static function getRelations(): array
     {
         return [
-            //
-        ];
+                //
+            ];
     }
-    
+
     public static function getPages(): array
     {
         return [
@@ -67,5 +74,5 @@ class CategoryResource extends Resource
             'create' => Pages\CreateCategory::route('/create'),
             'edit' => Pages\EditCategory::route('/{record}/edit'),
         ];
-    }    
+    }
 }
