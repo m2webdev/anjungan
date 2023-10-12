@@ -16,8 +16,18 @@ class HomeController extends Controller
         ]);
     }
 
-    public function show(Post $post)
+    public function show($year, $month, $day, $slug)
     {   
+        $post = Post::whereYear('created_at', $year)
+        ->whereMonth('created_at', $month)
+        ->whereDay('created_at', $day)
+        ->where('slug', $slug)
+        ->first();
+
+        if(!$post){
+            abort(404);
+        }
+
         return view('post.show', [
             'post' => $post
         ]);

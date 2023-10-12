@@ -47,7 +47,7 @@
                                         </div>
                                     </div>
                                     <div class="lg:col-span-7 flex flex-col justify-center p-2">
-                                        <a href="{{ url('post/' . $post->slug) }}">
+                                        <a href="{{ route('post.show', ['year' => $post->created_at->format('Y'), 'month' => $post->created_at->format('m'), 'day' => $post->created_at->format('d'), 'slug' => $post->slug]) }}">
                                             <h5 class="lg:text-xl text-lg font-bold tracking-tight text-gray-200">
                                                 {{ $post->title }}</h5>
                                         </a>
