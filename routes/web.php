@@ -15,4 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [HomeController::class, 'index']);
-Route::get('/{post:slug}', [HomeController::class, 'show']);
+Route::get('/post/{post:slug}', [HomeController::class, 'show']);
+Route::get('/post', function() {
+    abort(404);
+});

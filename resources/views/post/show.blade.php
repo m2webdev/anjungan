@@ -2,7 +2,8 @@
 @section('content')
     <section class="bg-gray-500 w-full lg:pt-16">
         <div class="px-32">
-            <h1 class="py-10 font-semibold text-3xl text-gray-100 text-center">{{ $post->title }}</h1>
+            <h1 class="pt-10 font-semibold text-3xl text-gray-100 text-center">{{ $post->title }}</h1>
+            <h1 class="py-3 text-sm text-gray-300 text-center">Kategori : {{ $post->created_at->format('Y/m/d') }}</h1>
         </div>
     </section>
 
@@ -19,12 +20,12 @@
                 <div
                     class="w-full max-w-md p-4 bg-white border border-gray-200 rounded-md my-5 shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
                     <div class="flex items-center justify-between mb-4">
-                        <h5 class="text-xl font-bold leading-none text-gray-900 dark:text-white">Latest Customers</h5>
+                        <h5 class="text-xl font-bold leading-none text-gray-900 dark:text-white">Kategori</h5>
                         <a href="#" class="text-sm font-medium text-blue-600 hover:underline dark:text-blue-500">
-                            View all
+                            {{--  --}}
                         </a>
                     </div>
-                    <div class="flow-root">
+                    {{-- <div class="flow-root">
                         <ul role="list" class="divide-y divide-gray-200 dark:divide-gray-700">
                             <li class="py-3 sm:py-4">
                                 <div class="flex items-center space-x-4">
@@ -47,7 +48,8 @@
                                 </div>
                             </li>
                         </ul>
-                    </div>
+                    </div> --}}
+                    <a href="#">{{ $post->category->name }}</a>
                 </div>
 
             </div>

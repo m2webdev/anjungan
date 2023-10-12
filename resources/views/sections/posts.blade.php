@@ -1,6 +1,6 @@
 <section class="bg-gray-50">
-    <div class="max-w-screen-xl px-6 py-8 mx-auto lg:py-24 lg:px-6">
-        <div class="w-full text-center mb-5">
+    <div class="max-w-screen-xl px-6 py-8 mx-auto lg:pb-24 lg:pt-10 lg:px-6">
+        <div class="w-full text-center mb-14">
             <h1 class="font-bold text-3xl text-black">Berita</h1>
             <h1 class="max-w-screen-md mx-auto font-light text-lg text-gray-500 py-2">Temukan informasi disini!</h1>
         </div>
@@ -47,11 +47,11 @@
                                         </div>
                                     </div>
                                     <div class="lg:col-span-7 flex flex-col justify-center p-2">
-                                        <a href="#">
-                                            <h5 class="lg:text-xl text-lg font-bold tracking-tight text-gray-100">
+                                        <a href="{{ url('post/' . $post->slug) }}">
+                                            <h5 class="lg:text-xl text-lg font-bold tracking-tight text-gray-200">
                                                 {{ $post->title }}</h5>
                                         </a>
-                                        <div class="font-normal py-4 text-sm text-gray-200 dark:text-gray-400">
+                                        <div class="font-light py-4 text-sm text-gray-200 dark:text-gray-400">
                                             {!! $post->excerpt !!}</div>
                                         <div class="font-normal text-xs text-gray-300 dark:text-gray-400">Kategori :
                                             {{ $post->category->name }} | {{ $post->created_at->diffForHumans() }}
@@ -70,6 +70,5 @@
             </div>
         </div>
         @endif
-    </div>
     </div>
 </section>

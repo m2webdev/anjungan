@@ -105,39 +105,60 @@
         </div>
     </section>
 
-    <section id="sambutan" class="bg-gray-50 w-full px-4 py-8 text-center lg:py-32 lg:px-6 overflow-hidden">
-        <figure class="max-w-screen-md mx-auto px-5 duration-1000 scale-110" id="blockquote">
-            <svg class="h-12 mx-auto mb-3 text-gray-400 dark:text-gray-600" viewBox="0 0 24 27" fill="none"
-                xmlns="http://www.w3.org/2000/svg">
-                <path
-                    d="M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.038 9 0L9.996 2.151C7.563 3.068 6 5.789 6 8H9.983L9.983 18L0 18Z"
-                    fill="currentColor" />
-            </svg>
-            <blockquote>
-                <p class="text-lg font-medium text-gray-900 md:text-2xl">"Selamat datang di website resmi Balai
-                    Pemantapan Kawasan Hutan dan Tata Lingkungan! Kami berkomitmen untuk melestarikan kekayaan alam dan
-                    lingkungan. Terus dukung upaya kami dalam menjaga keindahan alam kita. Terima kasih!"</p>
-            </blockquote>
-            <figcaption class="flex items-center justify-center mt-6 space-x-3">
-                <img class="w-6 h-6 rounded-full"
-                    src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/michael-gouch.png"
-                    alt="profile picture">
-                <div class="flex items-center divide-x-2 divide-gray-500 dark:divide-gray-700">
-                    <div class="pr-3 font-medium text-gray-900">Micheal Gough</div>
-                    <div class="pl-3 text-sm font-light text-gray-500 dark:text-gray-400">Kepala Balai</div>
-                </div>
-            </figcaption>
-        </figure>
+    <section class="bg-gray-50 w-full px-4 py-8 text-center lg:py-32 lg:px-6 overflow-hidden">
+        <div class="max-w-screen-lg mx-auto text-center mb-14">
+            <h1 class="text-3xl font-semibold text-gray-700 mb-2">Pegawai</h1>
+            <h2 class="text-lg text-gray-400">Informasi Kepegawaian
+            </h2>
+        </div>
+        <div class="max-w-screen-lg mx-auto grid grid-cols-3 gap-5">
+            <button data-tooltip-target="tooltip-default1" type="button"
+                class="bg-green-600 shadow-lg rounded-lg px-20 py-10 text-center">
+                <span class="text-2xl font-semibold text-gray-200 block mb-4">Tata Usaha</span>
+                <span class="text-xl font-medium text-gray-200">19 Orang</span>
+            </button>
+            <div id="tooltip-default1" role="tooltip"
+                class="absolute z-10 invisible inline-block p-10 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+                <span class="block">PNS 5 Orang</span>
+                <span>PPNPN 14 Orang</span>
+                <div class="tooltip-arrow" data-popper-arrow></div>
+            </div>
+
+            <button data-tooltip-target="tooltip-default2" type="button"
+                class="bg-green-600 shadow-lg rounded-lg px-20 py-10 text-center">
+                <span class="text-2xl font-semibold text-gray-200 block mb-4">PPKH</span>
+                <span class="text-xl font-medium text-gray-200">14 Orang</span>
+            </button>
+            <div id="tooltip-default2" role="tooltip"
+                class="absolute z-10 invisible inline-block p-10 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+                <span class="block">PNS 12 Orang</span>
+                <span>PPNPN 2 Orang</span>
+                <div class="tooltip-arrow" data-popper-arrow></div>
+            </div>
+
+            <button data-tooltip-target="tooltip-default3" type="button"
+                class="bg-green-600 shadow-lg rounded-lg px-20 py-10 text-center">
+                <span class="text-2xl font-semibold text-gray-200 block mb-4">SDHTL</span>
+                <span class="text-xl font-medium text-gray-200">17 Orang</span>
+            </button>
+            <div id="tooltip-default3" role="tooltip"
+                class="absolute z-10 invisible inline-block p-10 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+                <span class="block">PNS 13 Orang</span>
+                <span>PPNPN 4 Orang</span>
+                <div class="tooltip-arrow" data-popper-arrow></div>
+            </div>
+        </div>
+
     </section>
 
     @include('sections.posts')
 
-    <section class="flex justify-center items-center relative overflow-hidden">
-        <div class="overflow-hidden lg:h-screen relative">
-            <img class="thumbnail blur-sm w-screen bg-blend-multiply"
+    <section id="sambutan" class="flex justify-center items-center overflow-hidden">
+        <div class="flex flex-col overflow-hidden h-screen">
+            <img class="thumbnail blur-sm w-screen h-[110vh] bg-blend-multiply"
                 srcset="{{ asset('images/kantor.jpg') }} 1x, {{ asset('images/kantor.jpg') }} 2x" alt="">
         </div>
-        <div class="w-full absolute lg:h-screen h-auto bg-black opacity-70"></div>
+        <div class="w-full absolute h-screen bg-black opacity-70 space-y-96"></div>
 
         <figure class="max-w-screen-md absolute px-5 duration-1000 py-5" id="blockquote">
             <svg class="h-12 mx-auto mb-3 text-gray-400 dark:text-gray-600" viewBox="0 0 24 27" fill="none"
@@ -167,7 +188,8 @@
         <div class="max-w-screen-lg mx-auto pb-4 text-center mb-10">
 
             <h1 class="text-3xl font-semibold text-gray-700 mb-2">Informasi PPKH - KLHK</h1>
-            <h2 class="text-lg text-gray-400">Pelayanan Informasi Permohonan Persetujuan Penggunaan Kawasan Hutan (PPKH)</h2>
+            <h2 class="text-lg text-gray-400">Pelayanan Informasi Permohonan Persetujuan Penggunaan Kawasan Hutan (PPKH)
+            </h2>
         </div>
         <div class="max-w-screen-xl mx-auto flex space-x-3 text-center overflow-x-auto">
             @include('sections.swiper')
@@ -195,7 +217,7 @@
                 scrollToTop.classList.add("hidden");
             }
 
-            if (window.pageYOffset > 524 && window.pageYOffset < 1000) {
+            if (window.pageYOffset > 1989.5999755859375 && window.pageYOffset < 2535.199951171875) {
                 blockquote.classList.add("scale-110");
                 // blockquote.classList.add("bg-red-500");
             } else {
