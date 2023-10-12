@@ -1,4 +1,4 @@
-<section class="bg-gray-50">
+<section class="bg-gray-50 overflow-hidden">
     <div class="max-w-screen-xl px-6 py-8 mx-auto lg:pb-24 lg:pt-10 lg:px-6">
         <div class="w-full text-center mb-14">
             <h1 class="font-bold text-3xl text-black">Berita</h1>
@@ -8,21 +8,21 @@
             @if (count($posts))
                 <div class="grid lg:grid-cols-10 grid-cols-1 gap-7">
                     <div
-                        class="lg:col-span-3 bg-slate-700 border border-slate-600 rounded-lg shadow h-auto min-h-[475px] max-h-[475px] overflow-hidden">
+                        class="lg:col-span-3 bg-slate-700 border border-slate-600 rounded-lg shadow min-h-[475px] max-h-[475px] overflow-hidden">
                         @foreach ($posts as $image)
                             <img src="{{ asset('storage/' . $image->post_image) }}"
-                                class="h-full w-full rounded-lg hover:scale-105 duration-300" alt="">
+                                class="rounded-lg hover:scale-105 duration-300" alt="">
                         @endforeach
                     </div>
 
                     <div class="lg:col-span-7">
                         <div class="flex items-center mb-5">
-                            <h1 class="text-2xl font-semibold text-gray-100">Berita terkini</h1>
+                            <h1 class="md:text-2xl font-semibold text-gray-100">Berita terkini</h1>
                             <div class="flex-1 text-center px-3">
                                 <div class="border-b border-gray-300"></div>
                             </div>
-                            <a href="#" class="text-gray-300 text-sm mr-2 flex space-x-1 hover:text-blue-300">
-                                <p>Lihat semua</p>
+                            <a href="#" class="text-gray-300 md:text-sm text-xs  mr-2 flex space-x-1 hover:text-blue-300">
+                                <p class="self-center">Lihat semua</p>
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                     stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
                                     <path stroke-linecap="round" stroke-linejoin="round"
@@ -48,7 +48,7 @@
                                     </div>
                                     <div class="lg:col-span-7 flex flex-col justify-center p-2">
                                         <a href="{{ route('post.show', ['year' => $post->created_at->format('Y'), 'month' => $post->created_at->format('m'), 'day' => $post->created_at->format('d'), 'slug' => $post->slug]) }}">
-                                            <h5 class="lg:text-xl text-lg font-bold tracking-tight text-gray-200">
+                                            <h5 class="lg:text-2xl text-sm font-bold tracking-tight text-gray-200">
                                                 {{ $post->title }}</h5>
                                         </a>
                                         <div class="font-light py-4 text-sm text-gray-200 dark:text-gray-400">

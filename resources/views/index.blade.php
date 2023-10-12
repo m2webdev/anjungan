@@ -1,17 +1,17 @@
 @extends('layouts.partials.main')
 @section('content')
     <section
-        class="lg:pt-[29vh] pt-[23vh] h-[100vh] bg-[url('https://images.unsplash.com/photo-1511884642898-4c92249e20b6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')] bg-blend-multiply bg-gray-700">
+        class="lg:pt-[29vh] pt-[23vh] h-[100vh] bg-[url('https://images.unsplash.com/photo-1511884642898-4c92249e20b6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')] bg-blend-multiply bg-gray-700 w-full">
         <div class="max-w-screen-lg px-4 pb-8 mx-auto">
             <div class="text-center col-span-12">
-                <h1 class="mb-4 text-3xl font-extrabold lg:leading-none leading-normal md:text-4xl lg:text-5xl text-white">
+                <h1
+                    class="mb-4 text-2xl sm:text-3xl font-extrabold lg:leading-none leading-normal md:text-4xl lg:text-5xl text-white">
                     Selamat Datang di Balai Pemantapan Kawasan Hutan dan Tata Lingkungan</h1>
-                <p class="lg:max-w-2xl max-w-md mx-auto mb-16 font-light text-gray-300 lg:mb-8 md:text-lg lg:text-xl">Jl.
-                    Rusli
-                    Datau No.10, Dulomo Sel., Kec. Kota Utara, Kota Gorontalo, Gorontalo 96128</p>
+                <p class="lg:max-w-2xl max-w-md mx-auto mb-8 font-light text-gray-300 lg:mb-8 md:text-lg lg:text-xl text-sm">Jl.
+                    Rusli Datau No.10, Dulomo Sel., Kec. Kota Utara, Kota Gorontalo, Gorontalo 96128</p>
 
                 <a href="#sambutan"
-                    class="text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 font-medium rounded-lg text-lg px-5 py-3 text-center w-40">Lihat
+                    class="text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br font-medium rounded-lg md:text-lg px-5 py-3 text-center md:w-40 w-20 text-sm">Lihat
                     Sambutan</a>
             </div>
         </div>
@@ -21,17 +21,17 @@
         <div class="max-w-screen-xl px-6 py-8 mx-auto lg:pt-24 lg:pb-0 lg:px-6">
             <div class="w-full lg:-mt-40 -mt-[200px] p-4 bg-slate-800 rounded-lg shadow-md sm:p-8">
                 <div class="w-full text-center mb-5">
-                    <h1 class="font-bold text-2xl text-white">Website BPKHTL-XV Gorontalo</h1>
-                    <h1 class="max-w-screen-md mx-auto font-light text-md text-gray-300 py-2">Lorem ipsum dolor sit amet
+                    <h1 class="font-bold md:text-2xl text-xl text-white">Website BPKHTL-XV Gorontalo</h1>
+                    <h1 class="max-w-screen-md mx-auto font-light text-sm md:text-md text-gray-300 py-2">Lorem ipsum dolor sit amet
                         consectetur adipisicing elit. Molestias autem error libero laboriosam.</h1>
                 </div>
 
                 <div class="flex xl:flex-row flex-col xl:space-x-8 xl:space-y-0 space-y-4 justify-center">
                     <div class="p-6 bg-slate-700 border border-slate-600 rounded-lg shadow  duration-700 ">
                         <a href="#">
-                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-100">Verifikasi PNBP</h5>
+                            <h5 class="mb-2 sm:text-2xl text-xl font-bold tracking-tight text-gray-100">Verifikasi PNBP</h5>
                         </a>
-                        <p class="mb-3 font-normal text-gray-200 dark:text-gray-400">Memudahkan pengunjung dalam
+                        <p class="mb-3 font-normal text-sm sm:text-base text-gray-200 dark:text-gray-400">Memudahkan pengunjung dalam
                             mengisi data kedatangan dan keperluan secara elektronik untuk rekam jejak.</p>
                         <button data-modal-target="small-modal" data-modal-toggle="small-modal"
                             class="block w-full md:w-auto text-white duration-200 bg-green-600 hover:bg-green-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center "
@@ -47,9 +47,9 @@
                     </div>
                     <div class="p-6 bg-slate-700 border border-slate-600 rounded-lg shadow  duration-700 ">
                         <a href="#">
-                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-100">Peminjaman BMN</h5>
+                            <h5 class="mb-2 sm:text-2xl text-xl font-bold tracking-tight text-gray-100">Peminjaman BMN</h5>
                         </a>
-                        <p class="mb-3 font-normal text-gray-200 dark:text-gray-400">Memudahkan pengunjung dalam
+                        <p class="mb-3 font-normal text-sm sm:text-base text-gray-200 dark:text-gray-400">Memudahkan pengunjung dalam
                             mengisi data kedatangan dan keperluan secara elektronik untuk rekam jejak.</p>
                         <button data-modal-target="small-modal" data-modal-toggle="small-modal"
                             class="block w-full md:w-auto text-white duration-200 bg-green-600 hover:bg-green-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center "
@@ -65,9 +65,9 @@
                     </div>
                     <div class="p-6 bg-slate-700 border border-slate-600 rounded-lg shadow  duration-700 ">
                         <a href="#">
-                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-100">Buku Tamu Digital</h5>
+                            <h5 class="mb-2 sm:text-2xl text-xl font-bold tracking-tight text-gray-100">Buku Tamu Digital</h5>
                         </a>
-                        <p class="mb-3 font-normal text-gray-200 dark:text-gray-400">Memudahkan pengunjung dalam
+                        <p class="mb-3 font-normal text-sm sm:text-base text-gray-200 dark:text-gray-400">Memudahkan pengunjung dalam
                             mengisi data kedatangan dan keperluan secara elektronik untuk rekam jejak.</p>
                         <button data-modal-target="small-modal" data-modal-toggle="small-modal"
                             class="block w-full md:w-auto text-white duration-200 bg-green-600 hover:bg-green-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center "
@@ -83,9 +83,9 @@
                     </div>
                     <div class="p-6 bg-slate-700 border border-slate-600 rounded-lg shadow  duration-700 ">
                         <a href="#">
-                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-100">WebGIS</h5>
+                            <h5 class="mb-2 sm:text-2xl text-xl font-bold tracking-tight text-gray-100">WebGIS</h5>
                         </a>
-                        <p class="mb-3 font-normal text-gray-200 dark:text-gray-400">Memudahkan pengunjung dalam
+                        <p class="mb-3 font-normal text-sm sm:text-base text-gray-200 dark:text-gray-400">Memudahkan pengunjung dalam
                             mengisi data kedatangan dan keperluan secara elektronik untuk rekam jejak.</p>
                         <button data-modal-target="small-modal" data-modal-toggle="small-modal"
                             class="block w-full md:w-auto text-white duration-200 bg-green-600 hover:bg-green-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center "
@@ -111,7 +111,7 @@
             <h2 class="text-lg text-gray-400">Informasi Kepegawaian
             </h2>
         </div>
-        <div class="max-w-screen-lg mx-auto grid grid-cols-3 gap-5">
+        <div class="max-w-screen-lg py-5 mx-auto grid md:grid-cols-3 gap-3 overflow-hidden">
             <button data-tooltip-target="tooltip-default1" type="button"
                 class="bg-green-600 shadow-lg rounded-lg px-20 py-10 text-center">
                 <span class="text-2xl font-semibold text-gray-200 block mb-4">Tata Usaha</span>
@@ -160,7 +160,7 @@
         </div>
         <div class="w-full absolute h-screen bg-black opacity-70 space-y-96"></div>
 
-        <figure class="max-w-screen-md absolute px-5 duration-1000 py-5" id="blockquote">
+        <figure class="max-w-screen-md absolute px-5 duration-1000 py-5 overflow-hidden" id="blockquote">
             <svg class="h-12 mx-auto mb-3 text-gray-400 dark:text-gray-600" viewBox="0 0 24 27" fill="none"
                 xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -168,7 +168,7 @@
                     fill="currentColor" />
             </svg>
             <blockquote>
-                <p class="text-lg text-center font-medium text-gray-100 md:text-2xl">"Selamat datang di website resmi Balai
+                <p class="text-sm text-center font-medium text-gray-100 md:text-2xl">"Selamat datang di website resmi Balai
                     Pemantapan Kawasan Hutan dan Tata Lingkungan! Kami berkomitmen untuk melestarikan kekayaan alam dan
                     lingkungan. Terus dukung upaya kami dalam menjaga keindahan alam kita. Terima kasih!"</p>
             </blockquote>
@@ -187,8 +187,8 @@
     <section class="bg-gray-50 w-full px-4 py-8 mx-auto lg:py-16 lg:px-6 mySwiper">
         <div class="max-w-screen-lg mx-auto pb-4 text-center mb-10">
 
-            <h1 class="text-3xl font-semibold text-gray-700 mb-2">Informasi PPKH - KLHK</h1>
-            <h2 class="text-lg text-gray-400">Pelayanan Informasi Permohonan Persetujuan Penggunaan Kawasan Hutan (PPKH)
+            <h1 class="sm:text-3xl text-2xl font-semibold text-gray-700 mb-2">Informasi PPKH - KLHK</h1>
+            <h2 class="text-base text-gray-400">Pelayanan Informasi Permohonan Persetujuan Penggunaan Kawasan Hutan (PPKH)
             </h2>
         </div>
         <div class="max-w-screen-xl mx-auto flex space-x-3 text-center overflow-x-auto">
@@ -196,18 +196,4 @@
 
         </div>
     </section>
-
-    <script>
-        window.onscroll = function() {
-            const blockquote = document.getElementById("blockquote");
-
-            if (window.pageYOffset > 1989.5999755859375 && window.pageYOffset < 2535.199951171875) {
-                blockquote.classList.add("scale-110");
-                // blockquote.classList.add("bg-red-500");
-            } else {
-                blockquote.classList.remove("scale-110");
-                // blockquote.classList.remove("bg-red-500");
-            }
-        };
-    </script>
 @endsection
