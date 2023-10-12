@@ -107,7 +107,7 @@
 
     <section class="bg-gray-50 w-full px-4 py-8 text-center lg:py-32 lg:px-6 overflow-hidden">
         <div class="max-w-screen-lg mx-auto text-center mb-14">
-            <h1 class="text-3xl font-semibold text-gray-700 mb-2">Pegawai</h1>
+            <h1 class="text-3xl font-semibold text-gray-700 mb-2">Karyawan</h1>
             <h2 class="text-lg text-gray-400">Informasi Kepegawaian
             </h2>
         </div>
