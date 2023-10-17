@@ -18,7 +18,7 @@
     </section>
 
     <section class="bg-gray-50">
-        <div class="max-w-screen-xl px-6 py-8 mx-auto lg:pt-24 lg:pb-0 lg:px-6">
+        <div class="max-w-screen-xl px-6 py-8 mx-auto lg:pt-24 lg:pb-0 lg:px-6 ">
             <div class="w-full lg:-mt-40 -mt-[200px] p-4 bg-slate-800 rounded-lg shadow-md sm:p-8">
                 <div class="w-full text-center mb-5">
                     <h1 class="font-bold md:text-2xl text-xl text-white">Website BPKHTL-XV Gorontalo</h1>
@@ -106,9 +106,9 @@
     </section>
 
     <section class="bg-gray-50 w-full px-4 py-8 text-center lg:py-32 lg:px-6 overflow-hidden">
-        <div class="max-w-screen-lg mx-auto text-center mb-14">
+        <div class="max-w-screen-lg mx-auto text-center mb-5">
             <h1 class="text-3xl font-semibold text-gray-700 mb-2">Pegawai</h1>
-            <h2 class="text-lg text-gray-400">Informasi Kepegawaian
+            <h2 class="text-lg text-gray-500">Informasi Kepegawaian
             </h2>
         </div>
         <div class="max-w-screen-lg py-5 mx-auto grid md:grid-cols-3 gap-3 overflow-hidden">
@@ -185,7 +185,7 @@
     </section>
 
     <section class="bg-gray-50 w-full px-4 py-8 mx-auto lg:py-16 lg:px-6 mySwiper">
-        <div class="max-w-screen-lg mx-auto pb-4 text-center mb-10">
+        <div class="max-w-screen-lg mx-auto pb-4 text-center mb-5">
 
             <h1 class="sm:text-3xl text-2xl font-semibold text-gray-700 mb-2">Informasi PPKH - KLHK</h1>
             <h2 class="text-base text-gray-400">Pelayanan Informasi Permohonan Persetujuan Penggunaan Kawasan Hutan (PPKH)

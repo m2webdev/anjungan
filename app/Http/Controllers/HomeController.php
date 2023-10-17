@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Post;
 use Illuminate\Http\Request;
 
@@ -29,7 +30,8 @@ class HomeController extends Controller
         }
 
         return view('post.show', [
-            'post' => $post
+            'post' => $post,
+            'categories' => Category::all()
         ]);
     }
 }

@@ -1,5 +1,5 @@
 <footer class="bg-whitemax-w-screen-xl p-4 py-6 mx-auto lg:py-16 md:p-8 lg:p-10">
-    <div class="grid grid-cols-2 gap-8 md:grid-cols-3 lg:grid-cols-5">
+    {{-- <div class="grid grid-cols-2 gap-8 md:grid-cols-3 lg:grid-cols-5">
         <div>
             <h3 class="mb-6 text-sm font-semibold text-gray-900 uppercase">Company</h3>
             <ul class="text-gray-500 dark:text-gray-400">
@@ -82,7 +82,7 @@
                 </li>
             </ul>
         </div>
-    </div>
+    </div> --}}
     <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8">
     <div class="text-center">
         <a href="#"
