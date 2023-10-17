@@ -20,6 +20,7 @@ return new class extends Migration
             $table->text('body');
             $table->text('excerpt');
             $table->string('post_image')->nullable();
+            $table->string('navigation')->default('');
             $table->boolean('published')->default(false);
             $table->timestamps();
         });

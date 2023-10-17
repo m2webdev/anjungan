@@ -1,17 +1,17 @@
 <section class="bg-gray-50 overflow-hidden">
     <div class="max-w-screen-xl px-6 py-8 mx-auto lg:pb-24 lg:pt-10 lg:px-6">
-        <div class="w-full text-center mb-14">
-            <h1 class="font-bold text-3xl text-black">Berita</h1>
+        <div class="w-full text-center mb-8">
+            <h1 class="font-bold text-3xl text-gray-700">Berita</h1>
             <h1 class="max-w-screen-md mx-auto font-light text-lg text-gray-500 py-2">Temukan informasi disini!</h1>
         </div>
         <div class="w-full p-4 bg-slate-800 rounded-lg shadow-md sm:p-8">
             @if (count($posts))
                 <div class="grid lg:grid-cols-10 grid-cols-1 gap-7">
                     <div
-                        class="lg:col-span-3 bg-slate-700 border border-slate-600 rounded-lg shadow min-h-[475px] max-h-[475px] overflow-hidden">
+                        class="lg:col-span-3 col-span-1 bg-slate-700 border border-slate-600 rounded-lg shadow overflow-hidden">
                         @foreach ($posts as $image)
                             <img src="{{ asset('storage/' . $image->post_image) }}"
-                                class="rounded-lg hover:scale-105 duration-300" alt="">
+                                class="rounded-lg hover:scale-105 duration-300 max-w-full h-auto" alt="">
                         @endforeach
                     </div>
 
@@ -21,7 +21,8 @@
                             <div class="flex-1 text-center px-3">
                                 <div class="border-b border-gray-300"></div>
                             </div>
-                            <a href="#" class="text-gray-300 md:text-sm text-xs  mr-2 flex space-x-1 hover:text-blue-300">
+                            <a href="#"
+                                class="text-gray-300 md:text-sm text-xs  mr-2 flex space-x-1 hover:text-blue-300">
                                 <p class="self-center">Lihat semua</p>
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                     stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
@@ -32,7 +33,7 @@
                         </div>
 
                         @foreach ($posts as $post)
-                            <div class="bg-slate-700 border border-slate-600 rounded-lg shadow overflow-hidden mt-2 ">
+                            <div class="bg-slate-700 border border-slate-600 rounded-lg shadow overflow-hidden mt-4 ">
                                 <div class="grid lg:grid-cols-9">
                                     <div class="lg:col-span-2 overflow-hidden lg:block hidden">
                                         <div class="bg-transparent h-full">
@@ -46,9 +47,11 @@
                                             @endif
                                         </div>
                                     </div>
-                                    <div class="lg:col-span-7 flex flex-col justify-center p-2">
-                                        <a href="{{ route('post.show', ['year' => $post->created_at->format('Y'), 'month' => $post->created_at->format('m'), 'day' => $post->created_at->format('d'), 'slug' => $post->slug]) }}">
-                                            <h5 class="lg:text-2xl text-sm font-bold tracking-tight text-gray-200">
+                                    <div class="lg:col-span-7 flex flex-col justify-center p-3">
+                                        <a
+                                            href="{{ route('post.show', ['year' => $post->created_at->format('Y'), 'month' => $post->created_at->format('m'), 'day' => $post->created_at->format('d'), 'slug' => $post->slug]) }}">
+                                            <h5
+                                                class="lg:text-2xl text-sm font-bold tracking-tight text-gray-200 hover:text-green-300">
                                                 {{ $post->title }}</h5>
                                         </a>
                                         <div class="font-light py-4 text-sm text-gray-200 dark:text-gray-400">
