@@ -12,7 +12,7 @@
         rel="stylesheet">
         <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
     {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
-    <link rel="stylesheet" href="{{ asset('build/assets/app-6dfe4a5f.css ') }}">
+    <link rel="stylesheet" href="{{ asset('build/assets/app-7c48892c.css ') }}">
 </head>
 
 <body class="font-inter">
