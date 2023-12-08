@@ -151,7 +151,7 @@
 
 <div class="fixed bottom-5 right-5">
     <button id="scrollToTop" onclick="backTop()"
-        class="hidden animate-bounce text-white bg-slate-700 hover:bg-blue-800 font-medium rounded-full text-sm p-4 text-center items-center mr-2 ">
+        class="z-50 hidden animate-bounce text-white bg-slate-700 hover:bg-blue-800 font-medium rounded-full text-sm p-4 text-center items-center mr-2 ">
         <svg class="w-4 h-4 -rotate-90" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
             viewBox="0 0 14 10">
             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"

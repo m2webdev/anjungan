@@ -26,3 +26,5 @@ Route::get('/category/{category:slug}', function(Category $category) {
     dd($post);
     // return view()
 });
+
+Route::redirect('/laravel/login', '/login')->name('login');
