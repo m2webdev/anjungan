@@ -42,4 +42,23 @@
         </div>
     </div>
 </section>
+@if (isset($comments) && count($comments) > 0)
+    <section class="w-full bg-gray-100 overflow-hidden">
+        <div class="grid grid-cols-10 max-w-screen-xl mx-auto lg:space-x-3 lg:px-10 px-3">
+            <div class="col-span-10 mt-4 p-4 shadow-md rounded-md mx-auto bg-white lg:mb-10">
+                @foreach ($comments as $comment)
+                    <article class="p-6 text-base">
+                        <footer class="flex justify-between items-center mb-2">
+                            <div class="flex items-center">
+                                <p class="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white font-semibold">{{ $comment->nama }}</p>
+                                <p class="text-sm text-gray-600 dark:text-gray-400"><time pubdate datetime="{{ $comment->created_at->format(('d-M-Y')) }}">{{ $comment->created_at->translatedFormat('d F Y') }}</time></p>
+                            </div>
+                        </footer>
+                        <p class="text-gray-500 dark:text-gray-400">{!! $comment->ulasan !!}</p>
+                    </article>
+                @endforeach
+            </div>
+        </div>
+    </section>
+@endif
 @endsection

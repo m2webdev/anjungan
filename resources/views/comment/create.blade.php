@@ -1,5 +1,6 @@
-<form action="{{ route('comment.create', $commentParam) }}" method="POST">
+<form action="{{ route('comment.create') }}" method="POST">
     @csrf
+    <input type="text" name="model" value="{{ $commentParam }}" hidden>
     <div class="space-y-12">
         <div class="border-b border-gray-900/10 pb-12">
             <h2 class="text-base font-semibold leading-7 text-gray-900 mb-4">Komentar</h2>
@@ -7,23 +8,32 @@
                 <div class="sm:col-span-4 mb-4">
                     <label for="nama" class="block text-sm font-medium leading-6 text-gray-900">Nama</label>
                     <div class="mt-2">
-                        <div class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
-                            <input type="text" name="nama" id="nama" autocomplete="nama" class="block w-full rounded-md border-1 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" placeholder="janesmith">
+                        <div class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-green-600 sm:max-w-md">
+                            <input type="text" name="nama" id="nama" autocomplete="nama" class="block w-full rounded-md border-1 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-green-600 sm:text-sm sm:leading-6" placeholder="janesmith">
                         </div>
+                        @error('nama')
+                            <p class="mt-2 text-sm leading-6 text-red-600">{{ $message }}</p>
+                        @enderror
                     </div>
                 </div>
                 <div class="sm:col-span-4 mb-4">
                     <label for="telepon" class="block text-sm font-medium leading-6 text-gray-900">telepon</label>
                     <div class="mt-2">
-                        <div class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
-                            <input type="text" inputmode="tel" name="telepon" id="telepon" autocomplete="telepon" class="block w-full rounded-md border-1 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" placeholder="0812********">
+                        <div class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-green-600 sm:max-w-md">
+                            <input type="text" inputmode="tel" name="telepon" id="telepon" autocomplete="telepon" class="block w-full rounded-md border-1 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-green-600 sm:text-sm sm:leading-6" placeholder="0812********">
                         </div>
+                        @error('telepon')
+                            <p class="mt-2 text-sm leading-6 text-red-600">{{ $message }}</p>
+                        @enderror
                     </div>
                 </div>
                 <div class="col-span-full mb-4">
                     <label for="ulasan" class="block text-sm font-medium leading-6 text-gray-900">Ulasan</label>
                     <div class="mt-2">
-                    <textarea id="ulasan" name="ulasan" rows="3" class="block w-full rounded-md border-1 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"></textarea>
+                        <textarea id="ulasan" name="ulasan" rows="3" class="block w-full rounded-md border-1 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-green-600 sm:text-sm sm:leading-6"></textarea>
+                        @error('ulasan')
+                            <p class="mt-2 text-sm leading-6 text-red-600">{{ $message }}</p>
+                        @enderror
                     </div>
                 </div>
             </div>

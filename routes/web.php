@@ -27,7 +27,7 @@ Route::get('/category/{category:slug}', function(Category $category) {
     $post = $category->post;
 });
 
-Route::post('/comment/{type}', [CommentController::class, 'create'])->name('comment.create');
+Route::post('/comment', [CommentController::class, 'create'])->name('comment.create');
 Route::get('/profile/{title}', [ContentShowController::class, 'showProfile'])->name('profile.show');
 Route::get('/tata-usaha/{title}', [ContentShowController::class, 'showTataUsaha'])->name('tu.show');
 Route::get('/pkh/{title}', [ContentShowController::class, 'showPKH'])->name('pkh.show');

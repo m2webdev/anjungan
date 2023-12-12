@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Comment;
 use App\Models\ISDHTL;
 use App\Models\Layanan;
 use App\Models\PKH;
@@ -20,7 +21,8 @@ class ContentShowController extends Controller
         return response()->view('contents.show', [
             'item' => $profile,
             'items' => Profile::latest()->get(),
-            'commentParam' => ['type' => 'profile']
+            'commentParam' => get_class($profile),
+            'comments' => Comment::where('model', get_class($profile))->get()
         ]);
     }
 
@@ -32,7 +34,8 @@ class ContentShowController extends Controller
         return response()->view('contents.show', [
             'item' => $tataUsaha,
             'items' => TataUsaha::latest()->get(),
-            'commentParam' => ['type' => 'tata-usaha']
+            'commentParam' =>  get_class($tataUsaha),
+            'comments' => Comment::where('model', get_class($tataUsaha))->get()
         ]);
     }
 
@@ -44,7 +47,8 @@ class ContentShowController extends Controller
         return response()->view('contents.show', [
             'item' => $pkh,
             'items' => PKH::latest()->get(),
-            'commentParam' => ['type' => 'pkh']
+            'commentParam' => get_class($pkh),
+            'comments' => Comment::where('model', get_class($pkh))->get()
         ]);
     }
 
@@ -56,16 +60,19 @@ class ContentShowController extends Controller
         return response()->view('contents.show', [
             'item' => $isdhtl,
             'items' => ISDHTL::latest()->get(),
-            'commentParam' => ['type' => 'isdhtl']
+            'commentParam' => get_class($isdhtl),
+            'comments' => Comment::where('model', get_class($isdhtl))->get()
         ]);
     }
 
     public function showPublikasi()
     {
+        $publikasi = new Publikasi();
         return response()->view('contents.show', [
             'item' => 'Publikasi',
             'items' => Publikasi::latest()->get(),
-            'commentParam' => ['type' => 'publikasi']
+            'commentParam' => get_class($publikasi),
+            'comments' => Comment::where('model', get_class($publikasi))->get()
         ]);
     }
 
@@ -77,7 +84,8 @@ class ContentShowController extends Controller
         return response()->view('contents.show', [
             'item' => $layanan,
             'items' => Layanan::latest()->get(),
-            'commentParam' => ['type' => 'layanan']
+            'commentParam' => get_class($layanan),
+            'comments' => Comment::where('model', get_class($layanan))->get()
         ]);
     }
 
