@@ -13,6 +13,12 @@ return new class extends Migration
     {
         Schema::create('publikasis', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id');
+            $table->string('title');
+            $table->text('body');
+            $table->string('publikasi_image')->nullable();
+            $table->string('navigation')->default('');
+            $table->boolean('published')->default(false);
             $table->timestamps();
         });
     }

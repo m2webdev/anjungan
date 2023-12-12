@@ -13,6 +13,12 @@ return new class extends Migration
     {
         Schema::create('p_k_h_s', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id');
+            $table->string('title');
+            $table->text('body');
+            $table->string('pkh_image')->nullable();
+            $table->string('navigation')->default('');
+            $table->boolean('published')->default(false);
             $table->timestamps();
         });
     }
