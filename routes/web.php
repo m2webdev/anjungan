@@ -1,8 +1,10 @@
 <?php
 
+use App\Http\Controllers\CommentController;
 use App\Models\Post;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProfileController;
 use App\Models\Category;
 
 /*
@@ -23,8 +25,9 @@ Route::get('/artikel', function() {
 });
 Route::get('/category/{category:slug}', function(Category $category) {
     $post = $category->post;
-    dd($post);
-    // return view()
 });
+
+Route::post('/comment/{type}', [CommentController::class, 'create'])->name('comment.create');
+Route::get('/profile/{title}', [ProfileController::class, 'show'])->name('profile.show');
 
 Route::redirect('/laravel/login', '/login')->name('login');

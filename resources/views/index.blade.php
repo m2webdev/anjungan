@@ -189,7 +189,7 @@
     </div>
 </section> --}}
 
-<section class="bg-gray-50 w-full px-4 py-8 text-center lg:py-32 lg:px-6 overflow-hidden">
+<section class="bg-gray-50 w-full px-4 py-8 text-center lg:py-32 lg:px-6 overflow-hidden" style="margin-top: 10%">
     <div class="max-w-screen-lg mx-auto text-center mb-5">
         <h1 class="text-3xl font-semibold text-gray-700 mb-2">Pegawai</h1>
         <h2 class="text-lg text-gray-500">Informasi Kepegawaian
