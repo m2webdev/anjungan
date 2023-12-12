@@ -4,7 +4,7 @@ use App\Http\Controllers\CommentController;
 use App\Models\Post;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ContentShowController;
 use App\Models\Category;
 
 /*
@@ -28,6 +28,11 @@ Route::get('/category/{category:slug}', function(Category $category) {
 });
 
 Route::post('/comment/{type}', [CommentController::class, 'create'])->name('comment.create');
-Route::get('/profile/{title}', [ProfileController::class, 'show'])->name('profile.show');
+Route::get('/profile/{title}', [ContentShowController::class, 'showProfile'])->name('profile.show');
+Route::get('/tata-usaha/{title}', [ContentShowController::class, 'showTataUsaha'])->name('tu.show');
+Route::get('/pkh/{title}', [ContentShowController::class, 'showPKH'])->name('pkh.show');
+Route::get('/isdhtl/{title}', [ContentShowController::class, 'showISDHTL'])->name('isdhtl.show');
+Route::get('/publikasi', [ContentShowController::class, 'showPublikasi'])->name('publikasi.show');
+Route::get('/layanan/{title}', [ContentShowController::class, 'showLayanan'])->name('layanan.show');
 
 Route::redirect('/laravel/login', '/login')->name('login');

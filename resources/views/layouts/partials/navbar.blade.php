@@ -116,150 +116,147 @@
             id="navbar-sticky">
             <ul
                 class="flex flex-col p-4 md:p-0 mt-4 font-medium rounded-lg md:flex-row md:space-x-8 md:mt-0 md:border-0 bg-slate-700 md:bg-transparent">
-                <li>
-                    <button id="dropdownDelayButton" data-dropdown-toggle="dropdownDelay" data-dropdown-delay="100"
-                        data-dropdown-trigger="hover"
-                        class="flex items-center justify-between w-full text-white pl-3 md:pl-0 mt-2 md:mt-0"
-                        type="button">Profil <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true"
-                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="m1 1 4 4 4-4" />
-                        </svg>
-                    </button>
+                @php($allProfile = App\Models\Profile::latest()->get())
+                @if (count($allProfile) > 0)
+                    <li>
+                        <button id="dropdownDelayButton" data-dropdown-toggle="dropdownDelay" data-dropdown-delay="100"
+                            data-dropdown-trigger="hover"
+                            class="flex items-center justify-between w-full text-white pl-3 md:pl-0 mt-2 md:mt-0"
+                            type="button">Profil <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="m1 1 4 4 4-4" />
+                            </svg>
+                        </button>
 
-                    <!-- Dropdown menu -->
-                    <div id="dropdownDelay"
-                        class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
-                        <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDelayButton">
-                            @foreach (App\Models\Profile::latest()->get() as $profile)
-                                <li>
-                                    <a href="{{ route('profile.show', ['title' => $profile->title]) }}"
-                                        class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">{{ $profile->title }}</a>
-                                </li>
-                            @endforeach
-                        </ul>
-                    </div>
-                </li>
-                <li>
-                    <button id="dropdownDelayButton1" data-dropdown-toggle="dropdownDelay1" data-dropdown-delay="100"
-                        data-dropdown-trigger="hover"
-                        class="flex items-center justify-between w-full text-white pl-3 md:pl-0 mt-2 md:mt-0"
-                        type="button">Sub bag TU <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true"
-                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="m1 1 4 4 4-4" />
-                        </svg>
-                    </button>
+                        <!-- Dropdown menu -->
+                        <div id="dropdownDelay"
+                            class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
+                            <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDelayButton">
+                                @foreach ($allProfile as $profile)
+                                    <li>
+                                        <a href="{{ route('profile.show', ['title' => $profile->title]) }}"
+                                            class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">{{ $profile->title }}</a>
+                                    </li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    </li>
+                @endif
+                @php($allTataUsaha = App\Models\TataUsaha::latest()->get())
+                @if (count($allTataUsaha) > 0)
+                    <li>
+                        <button id="dropdownDelayButton1" data-dropdown-toggle="dropdownDelay1" data-dropdown-delay="100"
+                            data-dropdown-trigger="hover"
+                            class="flex items-center justify-between w-full text-white pl-3 md:pl-0 mt-2 md:mt-0"
+                            type="button">Sub bag TU <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="m1 1 4 4 4-4" />
+                            </svg>
+                        </button>
 
-                    <!-- Dropdown menu -->
-                    <div id="dropdownDelay1"
-                        class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
-                        <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDelayButton1">
-                            <li>
-                                <a href="#"
-                                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Fasilitas Sarpras</a>
-                            </li>
-                            <li>
-                                <a href="#"
-                                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">--</a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-                <li>
-                    <button id="dropdownDelayButton2" data-dropdown-toggle="dropdownDelay2" data-dropdown-delay="100"
-                        data-dropdown-trigger="hover"
-                        class="flex items-center justify-between w-full text-white pl-3 md:pl-0 mt-2 md:mt-0"
-                        type="button">PKH<svg class="w-2.5 h-2.5 ms-3" aria-hidden="true"
-                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="m1 1 4 4 4-4" />
-                        </svg>
-                    </button>
+                        <!-- Dropdown menu -->
+                        <div id="dropdownDelay1" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
+                            <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDelayButton1">
+                                @foreach ($allTataUsaha as $tataUsaha)
+                                    <li>
+                                        <a href="{{ route('tu.show', ['title' => $tataUsaha->title]) }}"
+                                            class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">{{ $tataUsaha->title }}</a>
+                                    </li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    </li>
+                @endif
+                @php($allPKH = App\Models\PKH::latest()->get())
+                @if (count($allPKH) > 0)
+                    <li>
+                        <button id="dropdownDelayButton2" data-dropdown-toggle="dropdownDelay2" data-dropdown-delay="100"
+                            data-dropdown-trigger="hover"
+                            class="flex items-center justify-between w-full text-white pl-3 md:pl-0 mt-2 md:mt-0"
+                            type="button">PKH<svg class="w-2.5 h-2.5 ms-3" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="m1 1 4 4 4-4" />
+                            </svg>
+                        </button>
 
-                    <!-- Dropdown menu -->
-                    <div id="dropdownDelay2"
-                        class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
-                        <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDelayButton">
-                            <li>
-                                <a href="#"
-                                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Kawasan Hutan</a>
-                            </li>
-                            <li>
-                                <a href="#"
-                                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">--</a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-                <li>
-                    <button id="dropdownDelayButton3" data-dropdown-toggle="dropdownDelay3" data-dropdown-delay="100"
-                        data-dropdown-trigger="hover"
-                        class="flex items-center justify-between w-full text-white pl-3 md:pl-0 mt-2 md:mt-0"
-                        type="button">ISDHTL<svg class="w-2.5 h-2.5 ms-3" aria-hidden="true"
-                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="m1 1 4 4 4-4" />
-                        </svg>
-                    </button>
+                        <!-- Dropdown menu -->
+                        <div id="dropdownDelay2"
+                            class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
+                            <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDelayButton">
+                                @foreach ($allPKH as $pkh)
+                                    <li>
+                                        <a href="{{ route('pkh.show', ['title' => $pkh->title]) }}"
+                                            class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">{{ $pkh->title }}</a>
+                                    </li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    </li>
+                @endif
+                @php($allISDHTL = App\Models\ISDHTL::latest()->get())
+                @if (count($allISDHTL) > 0)
+                    <li>
+                        <button id="dropdownDelayButton3" data-dropdown-toggle="dropdownDelay3" data-dropdown-delay="100"
+                            data-dropdown-trigger="hover"
+                            class="flex items-center justify-between w-full text-white pl-3 md:pl-0 mt-2 md:mt-0"
+                            type="button">ISDHTL<svg class="w-2.5 h-2.5 ms-3" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="m1 1 4 4 4-4" />
+                            </svg>
+                        </button>
 
-                    <!-- Dropdown menu -->
-                    <div id="dropdownDelay3"
-                        class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
-                        <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDelayButton">
-                            <li>
-                                <a href="#"
-                                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">ISDH</a>
-                            </li>
-                            <li>
-                                <a href="#"
-                                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">KPH</a>
-                            </li>
-                            <li>
-                                <a href="#"
-                                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Perizinan</a>
-                            </li>
-                            <li>
-                                <a href="#"
-                                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Pemantapan Lahan</a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-                <li>
-                    <a href="#"
-                        class="block py-2 pl-3 pr-4 text-white rounded md:bg-transparent md:text-white md:p-0 md:dark:text-blue-500"
-                        aria-current="page">Publikasi</a>
-                </li>
-                <li>
-                    <button id="dropdownDelayButton4" data-dropdown-toggle="dropdownDelay4" data-dropdown-delay="100"
-                        data-dropdown-trigger="hover"
-                        class="flex items-center justify-between w-full text-white pl-3 md:pl-0 mt-2 md:mt-0"
-                        type="button">Layanan <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true"
-                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="m1 1 4 4 4-4" />
-                        </svg>
-                    </button>
+                        <!-- Dropdown menu -->
+                        <div id="dropdownDelay3"
+                            class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
+                            <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDelayButton">
+                                @foreach ($allISDHTL as $isdhtl)
+                                    <li>
+                                        <a href="{{ route('isdhtl.show', ['title' => $isdhtl->title]) }}"
+                                            class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">{{ $isdhtl->title }}</a>
+                                    </li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    </li>
+                @endif
+                @if (count(App\Models\Publikasi::all()) > 0)
+                    <li>
+                        <a href="{{ route('publikasi.show') }}"
+                            class="block py-2 pl-3 pr-4 text-white rounded md:bg-transparent md:text-white md:p-0 md:dark:text-blue-500"
+                            aria-current="page">Publikasi</a>
+                    </li>
+                @endif
+                @php($allLayanan = App\Models\Layanan::latest()->get())
+                @if (count($allLayanan) > 0)
+                    <li>
+                        <button id="dropdownDelayButton4" data-dropdown-toggle="dropdownDelay4" data-dropdown-delay="100"
+                            data-dropdown-trigger="hover"
+                            class="flex items-center justify-between w-full text-white pl-3 md:pl-0 mt-2 md:mt-0"
+                            type="button">Layanan <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="m1 1 4 4 4-4" />
+                            </svg>
+                        </button>
 
-                    <!-- Dropdown menu -->
-                    <div id="dropdownDelay4"
-                        class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
-                        <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDelayButton">
-                            <li>
-                                <a href="#"
-                                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Buku
-                                    Tamu</a>
-                            </li>
-                            <li>
-                                <a href="#"
-                                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Sigap</a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-
-
+                        <!-- Dropdown menu -->
+                        <div id="dropdownDelay4"
+                            class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
+                            <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDelayButton">
+                                @foreach ($allLayanan as $layanan)
+                                    <li>
+                                        <a href="{{ route('layanan.show', ['title' => $layanan->title]) }}"
+                                            class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">{{ $layanan->title }}</a>
+                                    </li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    </li>
+                @endif
             </ul>
         </div>
     </div>
