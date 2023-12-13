@@ -22,7 +22,8 @@ class ContentShowController extends Controller
             'item' => $profile,
             'items' => Profile::latest()->get(),
             'commentParam' => get_class($profile),
-            'comments' => Comment::where('model', get_class($profile))->get()
+            'comments' => Comment::where('model', get_class($profile))->latest()->get(),
+            'othersRoute' => 'profile.show'
         ]);
     }
 
@@ -35,7 +36,8 @@ class ContentShowController extends Controller
             'item' => $tataUsaha,
             'items' => TataUsaha::latest()->get(),
             'commentParam' =>  get_class($tataUsaha),
-            'comments' => Comment::where('model', get_class($tataUsaha))->get()
+            'comments' => Comment::where('model', get_class($tataUsaha))->latest()->get(),
+            'othersRoute' => 'tu.show'
         ]);
     }
 
@@ -48,7 +50,8 @@ class ContentShowController extends Controller
             'item' => $pkh,
             'items' => PKH::latest()->get(),
             'commentParam' => get_class($pkh),
-            'comments' => Comment::where('model', get_class($pkh))->get()
+            'comments' => Comment::where('model', get_class($pkh))->latest()->get(),
+            'othersRoute' => 'pkh.show'
         ]);
     }
 
@@ -61,7 +64,8 @@ class ContentShowController extends Controller
             'item' => $isdhtl,
             'items' => ISDHTL::latest()->get(),
             'commentParam' => get_class($isdhtl),
-            'comments' => Comment::where('model', get_class($isdhtl))->get()
+            'comments' => Comment::where('model', get_class($isdhtl))->latest()->get(),
+            'othersRoute' => 'isdhtl.show'
         ]);
     }
 
@@ -72,7 +76,8 @@ class ContentShowController extends Controller
             'item' => 'Publikasi',
             'items' => Publikasi::latest()->get(),
             'commentParam' => get_class($publikasi),
-            'comments' => Comment::where('model', get_class($publikasi))->get()
+            'comments' => Comment::where('model', get_class($publikasi))->latest()->get(),
+            'othersRoute' => 'publikasi.show'
         ]);
     }
 
@@ -85,7 +90,8 @@ class ContentShowController extends Controller
             'item' => $layanan,
             'items' => Layanan::latest()->get(),
             'commentParam' => get_class($layanan),
-            'comments' => Comment::where('model', get_class($layanan))->get()
+            'comments' => Comment::where('model', get_class($layanan))->latest()->get(),
+            'othersRoute' => 'layanan.show'
         ]);
     }
 

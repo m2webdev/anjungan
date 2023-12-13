@@ -14,7 +14,7 @@
             @else
                 @foreach ($items as $itm)
                     <h6 class="text-lg font-semibold text-gray-800">{{ $itm->title }}</h6>
-                    <div class="text-base font-poppins text-slate-800 leading-7 w-full space-y-3 ">{!! $itm->body !!}</div>
+                    <div class="text-base font-poppins text-slate-800 leading-7 w-full space-y-3 mb-4">{!! $itm->body !!}</div>
                 @endforeach
             @endif
         </div>
@@ -30,7 +30,7 @@
                     <ul>
                         @foreach ($items as $itm)
                         <li class="mb-1">
-                            <a href="{{ route('profile.show', ['title' => $itm->title]) }}" class="{{ is_object($item) && $item->id == $itm->id ? 'text-green-600' : '' }} hover:text-green-600 duration-300">{{ $itm->title }}</a>
+                            <a href="{{ route($othersRoute, ['title' => $itm->title]) }}" class="{{ is_object($item) && $item->id == $itm->id ? 'text-green-600' : '' }} hover:text-green-600 duration-300">{{ $itm->title }}</a>
                         </li>
                         @endforeach
                     </ul>
@@ -51,7 +51,7 @@
                         <footer class="flex justify-between items-center mb-2">
                             <div class="flex items-center">
                                 <p class="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white font-semibold">{{ $comment->nama }}</p>
-                                <p class="text-sm text-gray-600 dark:text-gray-400"><time pubdate datetime="{{ $comment->created_at->format(('d-M-Y')) }}">{{ $comment->created_at->translatedFormat('d F Y') }}</time></p>
+                                <p class="text-sm text-gray-600 dark:text-gray-400"><time pubdate datetime="{{ $comment->created_at->format(('d-M-Y')) }}">{{ $comment->created_at->diffForHumans() }}</time></p>
                             </div>
                         </footer>
                         <p class="text-gray-500 dark:text-gray-400">{!! $comment->ulasan !!}</p>
