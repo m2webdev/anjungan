@@ -89,6 +89,12 @@ class PostResource extends Resource
                 TextColumn::make('created_at')
                 ->date()
                 ->sortable(),
+                TextColumn::make('published')
+                ->formatStateUsing(function($record) {
+                    return $record->published ? 
+                    "<span class='text-primary-600 font-semibold'>Dipublish</span>" : 
+                    "<span class='text-danger-600 font-semibold'>Tidak dipublish</span>";
+                })->html()
             ])
             ->filters([
                 TernaryFilter::make('published'),
