@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('nama');
             $table->string('telepon');
             $table->text('ulasan');
+            $table->boolean('published')->default(false);
             $table->timestamps();
         });
     }

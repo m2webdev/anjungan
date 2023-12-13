@@ -4,9 +4,9 @@ namespace App\Filament\Resources\CommentResource\Pages;
 
 use App\Filament\Resources\CommentResource;
 use Filament\Actions;
-use Filament\Resources\Pages\CreateRecord;
+use Filament\Resources\Pages\ViewRecord;
 
-class CreateComment extends CreateRecord
+class ViewComment extends ViewRecord
 {
     protected static string $resource = CommentResource::class;
 }
