@@ -46,7 +46,7 @@ class UserResource extends Resource
                         TextInput::make('name')->required()->minLength(5),
                         TextInput::make('email')->required()->email()->unique(),
                         Select::make('roles')
-                        ->relationship('roles', 'name', fn ($roles) => $query->where('name', '!=', 'leader'))
+                        ->relationship('roles', 'name', fn ($query) => $query->where('name', '!=', 'leader'))
                         ->required(),
                         TextInput::make('password')
                         ->password()
