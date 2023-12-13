@@ -16,6 +16,8 @@ class Profile extends Model
     {
         parent::booted();
 
+        
+
         static::saving(function ($post) {
             $post->user_id = Auth::id();
         });

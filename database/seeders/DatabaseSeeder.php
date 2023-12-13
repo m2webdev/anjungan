@@ -13,11 +13,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-
-        \App\Models\User::factory()->create([
-            'name' => 'admin',
-            'email' => 'admin@bpkhtl15gorontalo.com',
-            'password' => Hash::make('123adm!N')
-        ]);
+        $this->call(RolesSeeder::class);
     }
 }

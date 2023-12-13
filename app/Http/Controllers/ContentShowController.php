@@ -15,12 +15,12 @@ class ContentShowController extends Controller
 {
     public function showProfile($title)
     {
-        $profile = Profile::where('title', $title)->first();
+        $profile = Profile::where('published', true)->where('title', $title)->first();
         if (!$profile)
             abort(404);
         return response()->view('contents.show', [
             'item' => $profile,
-            'items' => Profile::latest()->get(),
+            'items' => Profile::where('published', true)->latest()->get(),
             'commentParam' => get_class($profile),
             'comments' => $this->getComments($profile),
             'othersRoute' => 'profile.show'
@@ -29,12 +29,12 @@ class ContentShowController extends Controller
 
     public function showTataUsaha($title)
     {
-        $tataUsaha = TataUsaha::where('title', $title)->first();
+        $tataUsaha = TataUsaha::where('published', true)->where('title', $title)->first();
         if (!$tataUsaha)
             abort(404);
         return response()->view('contents.show', [
             'item' => $tataUsaha,
-            'items' => TataUsaha::latest()->get(),
+            'items' => TataUsaha::where('published', true)->latest()->get(),
             'commentParam' => $this->getComments($tataUsaha),
             'othersRoute' => 'tu.show'
         ]);
@@ -42,12 +42,12 @@ class ContentShowController extends Controller
 
     public function showPKH($title)
     {
-        $pkh = PKH::where('title', $title)->first();
+        $pkh = PKH::where('published', true)->where('title', $title)->first();
         if (!$pkh)
             abort(404);
         return response()->view('contents.show', [
             'item' => $pkh,
-            'items' => PKH::latest()->get(),
+            'items' => PKH::where('published', true)->latest()->get(),
             'commentParam' => get_class($pkh),
             'comments' => $this->getComments($pkh),
             'othersRoute' => 'pkh.show'
@@ -56,12 +56,12 @@ class ContentShowController extends Controller
 
     public function showISDHTL($title)
     {
-        $isdhtl = ISDHTL::where('title', $title)->first();
+        $isdhtl = ISDHTL::where('published', true)->where('title', $title)->first();
         if (!$isdhtl)
             abort(404);
         return response()->view('contents.show', [
             'item' => $isdhtl,
-            'items' => ISDHTL::latest()->get(),
+            'items' => ISDHTL::where('published', true)->latest()->get(),
             'commentParam' => get_class($isdhtl),
             'comments' => $this->getComments($isdhtl),
             'othersRoute' => 'isdhtl.show'
@@ -73,7 +73,7 @@ class ContentShowController extends Controller
         $publikasi = new Publikasi();
         return response()->view('contents.show', [
             'item' => 'Publikasi',
-            'items' => Publikasi::latest()->get(),
+            'items' => Publikasi::where('published', true)->latest()->get(),
             'commentParam' => get_class($publikasi),
             'comments' => $this->getComments($publikasi),
             'othersRoute' => 'publikasi.show'
@@ -82,12 +82,12 @@ class ContentShowController extends Controller
 
     public function showLayanan($title)
     {
-        $layanan = Layanan::where('title', $title)->first();
+        $layanan = Layanan::where('published', true)->where('title', $title)->first();
         if (!$layanan)
             abort(404);
         return response()->view('contents.show', [
             'item' => $layanan,
-            'items' => Layanan::latest()->get(),
+            'items' => Layanan::where('published', true)->latest()->get(),
             'commentParam' => get_class($layanan),
             'comments' => $this->getComments($layanan),
             'othersRoute' => 'layanan.show'

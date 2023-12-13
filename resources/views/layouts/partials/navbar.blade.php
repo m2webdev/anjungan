@@ -116,7 +116,7 @@
             id="navbar-sticky">
             <ul
                 class="flex flex-col p-4 md:p-0 mt-4 font-medium rounded-lg md:flex-row md:space-x-8 md:mt-0 md:border-0 bg-slate-700 md:bg-transparent">
-                @php($allProfile = App\Models\Profile::latest()->get())
+                @php($allProfile = App\Models\Profile::where('published', true)->latest()->get())
                 @if (count($allProfile) > 0)
                     <li>
                         <button id="dropdownDelayButton" data-dropdown-toggle="dropdownDelay" data-dropdown-delay="100"
@@ -143,7 +143,7 @@
                         </div>
                     </li>
                 @endif
-                @php($allTataUsaha = App\Models\TataUsaha::latest()->get())
+                @php($allTataUsaha = App\Models\TataUsaha::where('published', true)->latest()->get())
                 @if (count($allTataUsaha) > 0)
                     <li>
                         <button id="dropdownDelayButton1" data-dropdown-toggle="dropdownDelay1" data-dropdown-delay="100"
@@ -169,7 +169,7 @@
                         </div>
                     </li>
                 @endif
-                @php($allPKH = App\Models\PKH::latest()->get())
+                @php($allPKH = App\Models\PKH::where('published', true)->latest()->get())
                 @if (count($allPKH) > 0)
                     <li>
                         <button id="dropdownDelayButton2" data-dropdown-toggle="dropdownDelay2" data-dropdown-delay="100"
@@ -196,7 +196,7 @@
                         </div>
                     </li>
                 @endif
-                @php($allISDHTL = App\Models\ISDHTL::latest()->get())
+                @php($allISDHTL = App\Models\ISDHTL::where('published', true)->latest()->get())
                 @if (count($allISDHTL) > 0)
                     <li>
                         <button id="dropdownDelayButton3" data-dropdown-toggle="dropdownDelay3" data-dropdown-delay="100"
@@ -223,14 +223,14 @@
                         </div>
                     </li>
                 @endif
-                @if (count(App\Models\Publikasi::all()) > 0)
+                @if (count(App\Models\Publikasi::where('published', true)->get()) > 0)
                     <li>
                         <a href="{{ route('publikasi.show') }}"
                             class="block py-2 pl-3 pr-4 text-white rounded md:bg-transparent md:text-white md:p-0 md:dark:text-blue-500"
                             aria-current="page">Publikasi</a>
                     </li>
                 @endif
-                @php($allLayanan = App\Models\Layanan::latest()->get())
+                @php($allLayanan = App\Models\Layanan::where('published', true)->latest()->get())
                 @if (count($allLayanan) > 0)
                     <li>
                         <button id="dropdownDelayButton4" data-dropdown-toggle="dropdownDelay4" data-dropdown-delay="100"

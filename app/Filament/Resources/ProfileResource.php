@@ -117,10 +117,14 @@ class ProfileResource extends Resource
         return $infolist
             ->schema([
                 TextEntry::make('title'),
-                TextEntry::make('category.name'),
                 TextEntry::make('body')
                     ->html()
                     ->columnSpanFull(),
             ]);
+    }
+
+    public static function canViewAny(): bool
+    {
+        return auth()->user()->hasRole('admin');
     }
 }

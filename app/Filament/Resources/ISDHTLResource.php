@@ -20,6 +20,7 @@ use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Filters\TernaryFilter;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class ISDHTLResource extends Resource
@@ -120,5 +121,16 @@ class ISDHTLResource extends Resource
                     ->html()
                     ->columnSpanFull(),
             ]);
-    }       
+    }     
+
+    public static function canViewAny(): bool
+    {
+        return auth()->user()->hasRole('admin');
+    }
+
+    public static function canView(Model $record): bool
+    {
+        return auth()->user()->hasRole('admin');
+    }
+    
 }

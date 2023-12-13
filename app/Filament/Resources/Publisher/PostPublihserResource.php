@@ -1,0 +1,89 @@
+<?php
+
+namespace App\Filament\Resources\Publisher;
+
+use App\Filament\Resources\Publisher\PostPublihserResource\Pages;
+use App\Filament\Resources\Publisher\PostPublihserResource\RelationManagers;
+use App\Models\Post;
+use Filament\Forms;
+use Filament\Forms\Form;
+use Filament\Resources\Resource;
+use Filament\Tables;
+use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Columns\ToggleColumn;
+use Filament\Tables\Table;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletingScope;
+
+class PostPublihserResource extends Resource
+{
+    protected static ?string $model = Post::class;
+
+    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    
+    protected static ?int $navigationSort = 2;
+    
+    protected static ?string $navigationGroup = 'Web';
+
+    public static function table(Table $table): Table
+    {
+        return $table
+            ->columns([
+                TextColumn::make('title')
+                ->sortable()
+                ->searchable(),
+                TextColumn::make('category.name')
+                ->sortable()
+                ->searchable(),
+                TextColumn::make('created_at')
+                ->date()
+                ->sortable(),
+                ToggleColumn::make('published')
+            ])
+            ->filters([
+                //
+            ])
+            ->actions([
+                Tables\Actions\ViewAction::make(),
+            ])
+            ->bulkActions([
+                Tables\Actions\BulkActionGroup::make([
+                    Tables\Actions\DeleteBulkAction::make(),
+                ]),
+            ])
+            ->emptyStateActions([
+                Tables\Actions\CreateAction::make(),
+            ]);
+    }
+    
+    public static function getRelations(): array
+    {
+        return [
+            //
+        ];
+    }
+    
+    public static function getPages(): array
+    {
+        return [
+            'index' => Pages\ListPostPublihsers::route('/'),
+            'view' => Pages\ViewPostPublihser::route('/{record}'),
+        ];
+    }    
+
+    public static function canViewAny(): bool
+    {
+        return auth()->user()->hasRole('leader');
+    }  
+
+    public static function canCreate(): bool
+    {
+        return false;
+    }
+
+    public static function canEdit(Model $record): bool
+    {
+        return false;
+    }
+}

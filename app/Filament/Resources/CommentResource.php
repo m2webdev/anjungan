@@ -44,7 +44,7 @@ class CommentResource extends Resource
                 ->searchable(),
                 TextColumn::make('created_at')
                 ->label('Tanggal Dibuat')
-                ->date()
+                ->date('d F Y')
                 ->sortable(),
                 TextColumn::make('model')
                 ->label('Konten')
@@ -54,6 +54,7 @@ class CommentResource extends Resource
                 }),
                 ToggleColumn::make('published')
             ])
+            ->defaultSort('created_at', 'DESC')
             ->filters([
                 //
             ])

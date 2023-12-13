@@ -120,4 +120,9 @@ class PublikasiResource extends Resource
                     ->columnSpanFull(),
             ]);
     } 
+
+    public static function canViewAny(): bool
+    {
+        return auth()->user()->hasRole('admin');
+    }
 }
