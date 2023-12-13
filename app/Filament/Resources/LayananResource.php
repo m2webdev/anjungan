@@ -28,6 +28,10 @@ class LayananResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-heart';
 
+    protected static ?int $navigationSort = 7;
+    
+    protected static ?string $navigationGroup = 'Konten';
+
     public static function form(Form $form): Form
     {
         return $form

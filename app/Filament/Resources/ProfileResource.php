@@ -31,6 +31,10 @@ class ProfileResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-building-library';
 
+    protected static ?int $navigationSort = 2;
+    
+    protected static ?string $navigationGroup = 'Konten';
+
     public static function form(Form $form): Form
     {
         return $form

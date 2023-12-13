@@ -28,6 +28,10 @@ class PKHResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-s-globe-europe-africa';
 
+    protected static ?int $navigationSort = 4;
+    
+    protected static ?string $navigationGroup = 'Konten';
+
     public static function form(Form $form): Form
     {
         return $form

@@ -29,6 +29,10 @@ class PublikasiResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-document-magnifying-glass';
 
+    protected static ?int $navigationSort = 6;
+    
+    protected static ?string $navigationGroup = 'Konten';
+
     public static function form(Form $form): Form
     {
         return $form
