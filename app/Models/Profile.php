@@ -12,11 +12,6 @@ class Profile extends Model
 
     protected $guarded = ['id'];
 
-    public function category()
-    {
-        return $this->belongsTo(Category::class);
-    }
-
     protected static function booted()
     {
         parent::booted();

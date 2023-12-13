@@ -67,9 +67,11 @@ class TataUsahaResource extends Resource
         return $table
         ->columns([
             TextColumn::make('title')
+            ->label('Judul')
             ->sortable()
             ->searchable(),
             TextColumn::make('created_at')
+            ->label('Tanggal Dibuat')
             ->date()
             ->sortable(),
         ])

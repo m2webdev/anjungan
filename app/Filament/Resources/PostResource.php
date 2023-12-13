@@ -73,9 +73,6 @@ class PostResource extends Resource
                     'default' => 3,
                     'lg' => 1,
                 ]),
-                Grid::make()->schema([
-                    Toggle::make('published')->label('Publish'),
-                ]),
             ])->columns(3);
     }
 
@@ -89,7 +86,6 @@ class PostResource extends Resource
                 TextColumn::make('category.name')
                 ->sortable()
                 ->searchable(),
-                ToggleColumn::make('published'),
                 TextColumn::make('created_at')
                 ->date()
                 ->sortable(),

@@ -28,6 +28,8 @@ class ISDHTLResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-book-open';
 
+    protected static ?string $navigationLabel = 'ISDHTL';
+
     protected static ?int $navigationSort = 5;
     
     protected static ?string $navigationGroup = 'Konten';
@@ -66,9 +68,11 @@ class ISDHTLResource extends Resource
         return $table
         ->columns([
             TextColumn::make('title')
+            ->label('Judul')
             ->sortable()
             ->searchable(),
             TextColumn::make('created_at')
+            ->label('Tanggal Dibuat')
             ->date()
             ->sortable(),
         ])

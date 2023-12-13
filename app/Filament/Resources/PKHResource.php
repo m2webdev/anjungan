@@ -28,6 +28,8 @@ class PKHResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-s-globe-europe-africa';
 
+    protected static ?string $navigationLabel = 'PKH';
+
     protected static ?int $navigationSort = 4;
     
     protected static ?string $navigationGroup = 'Konten';
@@ -66,9 +68,11 @@ class PKHResource extends Resource
         return $table
         ->columns([
             TextColumn::make('title')
+            ->label('Judul')
             ->sortable()
             ->searchable(),
             TextColumn::make('created_at')
+            ->label('Tanggal Dibuat')
             ->date()
             ->sortable(),
         ])

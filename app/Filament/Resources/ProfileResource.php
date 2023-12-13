@@ -46,14 +46,6 @@ class ProfileResource extends Resource
                             'md' => 2,
                         ])->schema([
                             TextInput::make('title')->rules(['required', 'min:3'])->required(),
-                            Select::make('category_id')
-                                ->label('Category')
-                                ->rules(['required'])
-                                ->preload()
-                                ->required()
-                                ->searchable()
-                                ->relationship('category', 'name')
-                                ->native(false),
                         ])->columnSpan(2),
                         RichEditor::make('body')->rules(['required'])->required()->columnSpan(2),
                     ])->columnSpan([
@@ -77,22 +69,16 @@ class ProfileResource extends Resource
         return $table
         ->columns([
             TextColumn::make('title')
-            ->sortable()
-            ->searchable(),
-            TextColumn::make('category.name')
+            ->label('Judul')
             ->sortable()
             ->searchable(),
             TextColumn::make('created_at')
+            ->label('Tanggal Dibuat')
             ->date()
             ->sortable(),
         ])
         ->filters([
             TernaryFilter::make('published'),
-            SelectFilter::make('category_id')
-            ->label('Category')
-            ->relationship('category', 'name')
-            ->preload()
-            ->multiple()
         ])
         ->actions([
             Tables\Actions\ViewAction::make(),
