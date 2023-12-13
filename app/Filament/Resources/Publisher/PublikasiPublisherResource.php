@@ -7,6 +7,8 @@ use App\Filament\Resources\Publisher\PublikasiPublisherResource\RelationManagers
 use App\Models\Publikasi;
 use Filament\Forms;
 use Filament\Forms\Form;
+use Filament\Infolists\Components\TextEntry;
+use Filament\Infolists\Infolist;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Columns\TextColumn;
@@ -78,7 +80,18 @@ class PublikasiPublisherResource extends Resource
             'index' => Pages\ListPublikasiPublishers::route('/'),
             'view' => Pages\ViewPublikasiPublisher::route('/{record}'),
         ];
-    }        
+    }         
+    
+    public static function infolist(Infolist $infolist): Infolist
+    {
+        return $infolist
+            ->schema([
+                TextEntry::make('title'),
+                TextEntry::make('body')
+                    ->html()
+                    ->columnSpanFull(),
+            ]);
+    }
 
     public static function canViewAny(): bool
     {

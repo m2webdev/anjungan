@@ -7,6 +7,8 @@ use App\Filament\Resources\Publisher\PostPublihserResource\RelationManagers;
 use App\Models\Post;
 use Filament\Forms;
 use Filament\Forms\Form;
+use Filament\Infolists\Components\TextEntry;
+use Filament\Infolists\Infolist;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Columns\TextColumn;
@@ -70,7 +72,18 @@ class PostPublihserResource extends Resource
             'index' => Pages\ListPostPublihsers::route('/'),
             'view' => Pages\ViewPostPublihser::route('/{record}'),
         ];
-    }    
+    }     
+    
+    public static function infolist(Infolist $infolist): Infolist
+    {
+        return $infolist
+            ->schema([
+                TextEntry::make('title'),
+                TextEntry::make('body')
+                    ->html()
+                    ->columnSpanFull(),
+            ]);
+    }
 
     public static function canViewAny(): bool
     {

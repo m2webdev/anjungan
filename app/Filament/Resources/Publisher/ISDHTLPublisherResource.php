@@ -7,6 +7,8 @@ use App\Filament\Resources\Publisher\ISDHTLPublisherResource\RelationManagers;
 use App\Models\ISDHTL;
 use Filament\Forms;
 use Filament\Forms\Form;
+use Filament\Infolists\Components\TextEntry;
+use Filament\Infolists\Infolist;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Columns\TextColumn;
@@ -72,7 +74,18 @@ class ISDHTLPublisherResource extends Resource
             'index' => Pages\ListISDHTLPublishers::route('/'),
             'view' => Pages\ViewISDHTLPublisher::route('/{record}'),
         ];
-    }    
+    }     
+    
+    public static function infolist(Infolist $infolist): Infolist
+    {
+        return $infolist
+            ->schema([
+                TextEntry::make('title'),
+                TextEntry::make('body')
+                    ->html()
+                    ->columnSpanFull(),
+            ]);
+    }
 
     public static function canViewAny(): bool
     {
