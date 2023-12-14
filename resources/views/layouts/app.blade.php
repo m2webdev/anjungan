@@ -12,6 +12,7 @@
         rel="stylesheet">
         <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @bukStyles
 </head>
 
 <body class="font-inter">
