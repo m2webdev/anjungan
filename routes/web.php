@@ -5,6 +5,7 @@ use App\Models\Post;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ContentShowController;
+use App\Http\Controllers\FileController;
 use App\Models\Category;
 
 /*
@@ -34,5 +35,7 @@ Route::get('/pkh/{title}', [ContentShowController::class, 'showPKH'])->name('pkh
 Route::get('/isdhtl/{title}', [ContentShowController::class, 'showISDHTL'])->name('isdhtl.show');
 Route::get('/publikasi', [ContentShowController::class, 'showPublikasi'])->name('publikasi.show');
 Route::get('/layanan/{title}', [ContentShowController::class, 'showLayanan'])->name('layanan.show');
+
+Route::get('storage-files/{folder}/{filename}', [FileController::class, 'showPdf'])->name('pdf.show');
 
 Route::redirect('/laravel/login', '/login')->name('login');

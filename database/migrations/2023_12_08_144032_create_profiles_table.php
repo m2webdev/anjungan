@@ -16,7 +16,7 @@ return new class extends Migration
             $table->foreignId('user_id');
             $table->string('title');
             $table->text('body');
-            $table->string('profile_image')->nullable();
+            $table->string('file')->nullable();
             $table->string('navigation')->default('');
             $table->boolean('published')->default(false);
             $table->timestamps();

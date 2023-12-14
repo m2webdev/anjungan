@@ -11,8 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Poppins&display=swap"
         rel="stylesheet">
         <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
-    {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
-    <link rel="stylesheet" href="{{ asset('build/assets/app-7c48892c.css ') }}">
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
 <body class="font-inter">

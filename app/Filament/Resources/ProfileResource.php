@@ -14,7 +14,9 @@ use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
 use Filament\Forms\Form;
+use Filament\Infolists\Components\Section as ComponentsSection;
 use Filament\Infolists\Components\TextEntry;
+use Filament\Infolists\Components\ViewEntry;
 use Filament\Infolists\Infolist;
 use Filament\Resources\Resource;
 use Filament\Tables;
@@ -53,10 +55,10 @@ class ProfileResource extends Resource
                         'lg' => 2,
                     ]),
                 Section::make()->schema([
-                    FileUpload::make('profile_image')
-                        ->label('Image')
+                    FileUpload::make('file')
+                        ->label('File')
                         ->disk('public')
-                        ->directory('profile-images'),
+                        ->directory('profile'),
                 ])->columnSpan([
                     'default' => 3,
                     'lg' => 1,
@@ -122,10 +124,15 @@ class ProfileResource extends Resource
     {
         return $infolist
             ->schema([
-                TextEntry::make('title'),
-                TextEntry::make('body')
-                    ->html()
-                    ->columnSpanFull(),
+                ComponentsSection::make()
+                ->schema([
+                    TextEntry::make('title'),
+                    TextEntry::make('body')
+                        ->html()
+                        ->columnSpanFull(),
+                    ViewEntry::make('file')
+                        ->view('admin.file')
+                ])
             ]);
     }
 
